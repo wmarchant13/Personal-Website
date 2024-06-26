@@ -1,6 +1,6 @@
 {
   "name": "personalwesbite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
     "@commitlint/prompt-cli": "^19.3.1",
