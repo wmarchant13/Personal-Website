@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:personal-website": "node dist/personal-website/server/server.mjs"
+    "serve:ssr:personal-website": "node dist/personal-website/server/server.mjs",
+    "build": "ng build --output public"
+    }
   },
   "private": true,
   "dependencies": {
