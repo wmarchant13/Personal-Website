@@ -1,22 +1,16 @@
-import { APITester } from "./APITester";
-import "./index.css";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/home";
 
-import logo from "./logo.svg";
-import reactLogo from "./react.svg";
-
-export function App() {
+function App() {
   return (
-    <div className="app">
-      <div className="logo-container">
-        <img src={logo} alt="Bun Logo" className="logo bun-logo" />
-        <img src={reactLogo} alt="React Logo" className="logo react-logo" />
-      </div>
+    <div>
+      <nav style={{ display: "flex", gap: "1rem" }}>
+        <Link to="/">Home</Link>
+      </nav>
 
-      <h1>Bun + React</h1>
-      <p>
-        Edit <code>src/App.tsx</code> and save to test HMR
-      </p>
-      <APITester />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
