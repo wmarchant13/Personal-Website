@@ -1,25 +1,47 @@
-# Personal-Website
+# Personal Website
 
-Personal website made by and for William Marchant.
+This is the personal website of William Marchant, built as a modern React application using Bun for fast development and deployment.
 
-# bun-react-template
+## Project Overview
 
-To install dependencies:
+- **Split-screen resume layout**: Features a fixed left panel with hero and contact info, and a scrollable right panel for resume sections.
+- **Responsive design**: Adapts to mobile with a hamburger menu and optimized layout.
+- **Custom theming**: Uses deep purple and red for a unique, professional look.
+- **Scrollspy navigation**: Highlights sections as you scroll.
+- **Downloadable resume**: Easily download the resume from the navbar.
 
-```bash
-bun install
-```
+## AI Coding Agents
 
-To start a development server:
+This project was developed with the help of GitHub Copilot agents, including:
 
-```bash
-bun dev
-```
+- **GPT-4.1**: Used for code generation, refactoring, and design suggestions.
+- **Claude Sonnet 4.5**: Assisted with advanced reasoning, UI/UX advice, and code review.
 
-To run for production:
+These agents provided real-time coding assistance, design feedback, and automated refactoring throughout the development process.
 
-```bash
-bun start
-```
+## Bun React Template Steps
 
-This project was created using `bun init` in bun v1.3.3. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+This project uses the Bun React template for setup and development:
+
+1. **Initialize the project**
+   ```bash
+   bun init
+   ```
+2. **Install dependencies**
+   ```bash
+   bun install
+   ```
+3. **Start the development server**
+   ```bash
+   bun dev
+   ```
+4. **Build and run for production**
+   ```bash
+   bun start
+   ```
+
+For more information about Bun, visit [bun.sh](https://bun.sh).
+
+---
+
+Feel free to fork, modify, or use this template for your own personal site!
