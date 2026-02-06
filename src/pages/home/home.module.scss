@@ -148,6 +148,11 @@
   color: #3d3530;
   border-bottom: 1px solid #3d3530;
   margin-bottom: var(--space-lg);
+
+  @media (max-width: 768px) {
+    padding: 0 0 var(--space-md) 0;
+    margin-bottom: var(--space-md);
+  }
 }
 
 // .experienceCard:hover {
@@ -177,6 +182,10 @@
   margin-bottom: var(--space-xs);
   font-weight: 700;
   font-family: "Instrument Serif", Georgia, serif;
+
+  @media (max-width: 768px) {
+    font-size: var(--fs-h3);
+  }
 }
 
 .cardSubtitle {
@@ -194,6 +203,11 @@
   font-weight: 400;
   text-align: justify;
   font-family: "Instrument Serif", Georgia, serif;
+
+  @media (max-width: 768px) {
+    font-size: var(--fs-body-sm);
+    line-height: 1.65;
+  }
 }
 
 // Skills Section
@@ -201,6 +215,11 @@
   display: grid;
   gap: var(--space-md);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
 }
 
 .skillBlock {

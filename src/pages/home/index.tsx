@@ -197,83 +197,99 @@ export default function Home() {
           <div
             style={{
               padding: isMobile
-                ? "var(--space-xs) var(--space-sm)"
+                ? "var(--space-xs) var(--space-md)"
                 : "var(--space-2xl)",
+              height: isMobile ? "100%" : "auto",
+              display: "flex",
+              alignItems: "center",
             }}
           >
             <section
               id="hero"
               className={`${styles.fadeIn}`}
-              style={{ boxSizing: "border-box" }}
+              style={{ boxSizing: "border-box", width: "100%" }}
             >
               <div className={styles.heroContent}>
                 {/* Newspaper Author Block */}
                 <div
                   style={{
-                    borderTop: "3px double #f5f1e8",
-                    borderBottom: "3px double #f5f1e8",
+                    borderTop: isMobile
+                      ? "2px double #f5f1e8"
+                      : "3px double #f5f1e8",
+                    borderBottom: isMobile
+                      ? "2px double #f5f1e8"
+                      : "3px double #f5f1e8",
                     padding: isMobile
                       ? "var(--space-xs) 0"
                       : "var(--space-lg) 0",
                     marginBottom: isMobile
                       ? "var(--space-xs)"
                       : "var(--space-xl)",
+                    display: isMobile ? "flex" : "block",
+                    alignItems: isMobile ? "center" : undefined,
+                    gap: isMobile ? "var(--space-md)" : undefined,
                   }}
                 >
+                  {/* Left: Name & Title */}
+                  <div style={{ flex: isMobile ? "1" : undefined }}>
+                    <div
+                      style={{
+                        fontSize: isMobile ? "0.5rem" : "0.8rem",
+                        fontWeight: 600,
+                        color: "rgba(245, 241, 232, 0.5)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.15em",
+                        fontFamily: "Barlow, sans-serif",
+                        marginBottom: isMobile ? "1px" : "var(--space-xs)",
+                      }}
+                    >
+                      Written By
+                    </div>
+                    <div
+                      style={{
+                        fontSize: isMobile ? "1.1rem" : "2.5rem",
+                        fontWeight: 700,
+                        color: "#f5f1e8",
+                        fontFamily: "Instrument Serif, Georgia, serif",
+                        lineHeight: 1.1,
+                        marginBottom: isMobile ? "1px" : "var(--space-sm)",
+                      }}
+                    >
+                      William Marchant
+                    </div>
+                    <div
+                      style={{
+                        fontSize: isMobile ? "0.7rem" : "1.2rem",
+                        fontStyle: "italic",
+                        color: "#f5f1e8",
+                        fontFamily: "Instrument Serif, Georgia, serif",
+                        marginBottom: 0,
+                        opacity: 0.7,
+                      }}
+                    >
+                      Software Engineer
+                    </div>
+                  </div>
+                  {/* Right: Contact Details */}
                   <div
                     style={{
-                      fontSize: isMobile ? "0.55rem" : "0.8rem",
-                      fontWeight: 600,
-                      color: "rgba(245, 241, 232, 0.5)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.15em",
-                      fontFamily: "Barlow, sans-serif",
-                      marginBottom: isMobile ? "2px" : "var(--space-xs)",
+                      display: isMobile ? "none" : "block",
                     }}
                   >
-                    Written By
+                    <hr
+                      style={{
+                        border: "none",
+                        borderTop: "1px solid rgba(245, 241, 232, 0.2)",
+                        margin: "0 0 var(--space-md) 0",
+                      }}
+                    />
                   </div>
-                  <div
-                    style={{
-                      fontSize: isMobile ? "1.2rem" : "2.5rem",
-                      fontWeight: 700,
-                      color: "#f5f1e8",
-                      fontFamily: "Instrument Serif, Georgia, serif",
-                      lineHeight: 1.1,
-                      marginBottom: isMobile ? "2px" : "var(--space-sm)",
-                    }}
-                  >
-                    William Marchant
-                  </div>
-                  <div
-                    style={{
-                      fontSize: isMobile ? "0.75rem" : "1.2rem",
-                      fontStyle: "italic",
-                      color: "#f5f1e8",
-                      fontFamily: "Instrument Serif, Georgia, serif",
-                      marginBottom: isMobile
-                        ? "var(--space-xs)"
-                        : "var(--space-lg)",
-                      opacity: 0.7,
-                    }}
-                  >
-                    Software Engineer
-                  </div>
-                  <hr
-                    style={{
-                      border: "none",
-                      borderTop: "1px solid rgba(245, 241, 232, 0.2)",
-                      margin: isMobile
-                        ? "0 0 var(--space-xs) 0"
-                        : "0 0 var(--space-md) 0",
-                    }}
-                  />
                   {/* Contact Details */}
                   <div
                     style={{
                       display: "flex",
-                      flexDirection: isMobile ? "row" : "column",
-                      gap: isMobile ? "var(--space-sm)" : "var(--space-sm)",
+                      flexDirection: "column",
+                      gap: isMobile ? "2px" : "var(--space-sm)",
                     }}
                   >
                     <a
@@ -296,7 +312,7 @@ export default function Home() {
                         (e.currentTarget.style.color = "#f5f1e8")
                       }
                     >
-                      <FaEnvelope size={isMobile ? 11 : 16} />
+                      <FaEnvelope size={isMobile ? 10 : 16} />
                       wmarchant13@gmail.com
                     </a>
                     <span
@@ -304,13 +320,13 @@ export default function Home() {
                         color: "#f5f1e8",
                         display: "flex",
                         alignItems: "center",
-                        gap: "8px",
-                        fontSize: isMobile ? "0.65rem" : "1rem",
+                        gap: isMobile ? "5px" : "8px",
+                        fontSize: isMobile ? "0.6rem" : "1rem",
                         fontFamily: "Barlow, sans-serif",
                         fontWeight: 500,
                       }}
                     >
-                      <FaPhone size={isMobile ? 11 : 16} />
+                      <FaPhone size={isMobile ? 10 : 16} />
                       +1 518-813-7261
                     </span>
                   </div>
@@ -320,8 +336,9 @@ export default function Home() {
                 <div
                   style={{
                     display: "flex",
-                    gap: isMobile ? "10px" : "15px",
+                    gap: isMobile ? "12px" : "15px",
                     alignItems: "center",
+                    marginTop: isMobile ? "0" : undefined,
                   }}
                 >
                   {[
@@ -555,7 +572,7 @@ export default function Home() {
               position: "relative",
               // placeContent: "center",
               zIndex: 1,
-              paddingTop: "10%",
+              paddingTop: "7%",
             }}
           >
             <section
@@ -574,12 +591,14 @@ export default function Home() {
                   style={{
                     color: "#3d3530",
                     fontFamily: "Instrument Serif, Georgia, serif",
-                    fontSize: isMobile ? "1.75rem" : "2.25rem",
+                    fontSize: isMobile ? "1.4rem" : "2.25rem",
                     fontWeight: 700,
                     textTransform: "uppercase",
                     letterSpacing: "0.08em",
                     textAlign: "center",
-                    margin: "var(--space-md) 0",
+                    margin: isMobile
+                      ? "var(--space-sm) 0"
+                      : "var(--space-md) 0",
                   }}
                 >
                   About
@@ -587,7 +606,7 @@ export default function Home() {
                 <hr className="newspaper-rule" />
                 <div
                   style={{
-                    marginTop: "var(--space-lg)",
+                    marginTop: isMobile ? "var(--space-md)" : "var(--space-lg)",
                     maxWidth: "680px",
                     marginLeft: "auto",
                     marginRight: "auto",
@@ -596,7 +615,7 @@ export default function Home() {
                   <p
                     className="drop-cap"
                     style={{
-                      fontSize: isMobile ? "1rem" : "1.1rem",
+                      fontSize: isMobile ? "0.95rem" : "1.1rem",
                       lineHeight: 1.8,
                       color: "#3d3530",
                       fontFamily: "Instrument Serif, Georgia, serif",
@@ -632,14 +651,14 @@ export default function Home() {
                   style={{
                     maxWidth: "800px",
                     margin: "0 auto",
-                    padding: "var(--space-xl)",
+                    padding: isMobile ? "var(--space-md)" : "var(--space-xl)",
                     background: "rgba(61, 53, 48, 0.03)",
                     borderRadius: "8px",
                   }}
                 >
                   <p
                     style={{
-                      fontSize: isMobile ? "1.25rem" : "1.5rem",
+                      fontSize: isMobile ? "1.05rem" : "1.5rem",
                       fontStyle: "italic",
                       color: "#3d3530",
                       marginBottom: "var(--space-md)",
@@ -677,12 +696,12 @@ export default function Home() {
                 style={{
                   color: "#3d3530",
                   fontFamily: "Instrument Serif, Georgia, serif",
-                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontSize: isMobile ? "1.4rem" : "2.25rem",
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
                   textAlign: "center",
-                  margin: "var(--space-md) 0",
+                  margin: isMobile ? "var(--space-sm) 0" : "var(--space-md) 0",
                   padding: 0,
                 }}
               >
@@ -862,12 +881,12 @@ export default function Home() {
                 style={{
                   color: "#3d3530",
                   fontFamily: "Instrument Serif, Georgia, serif",
-                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontSize: isMobile ? "1.4rem" : "2.25rem",
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
                   textAlign: "center",
-                  margin: "var(--space-md) 0",
+                  margin: isMobile ? "var(--space-sm) 0" : "var(--space-md) 0",
                 }}
               >
                 Education
@@ -922,12 +941,12 @@ export default function Home() {
                 style={{
                   color: "#3d3530",
                   fontFamily: "Instrument Serif, Georgia, serif",
-                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontSize: isMobile ? "1.4rem" : "2.25rem",
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
                   textAlign: "center",
-                  margin: "var(--space-md) 0",
+                  margin: isMobile ? "var(--space-sm) 0" : "var(--space-md) 0",
                 }}
               >
                 Skills
@@ -985,12 +1004,12 @@ export default function Home() {
                 style={{
                   color: "#3d3530",
                   fontFamily: "Instrument Serif, Georgia, serif",
-                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontSize: isMobile ? "1.4rem" : "2.25rem",
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "0.08em",
                   textAlign: "center",
-                  margin: "var(--space-md) 0",
+                  margin: isMobile ? "var(--space-sm) 0" : "var(--space-md) 0",
                 }}
               >
                 Projects

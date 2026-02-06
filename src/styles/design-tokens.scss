@@ -302,10 +302,18 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
+
+  @media (max-width: 768px) {
+    padding: 0 var(--space-md);
+  }
 }
 
 .section {
   padding: var(--space-section) 0;
+
+  @media (max-width: 768px) {
+    padding: var(--space-xl) 0;
+  }
 }
 
 .stack-sm > * + * {

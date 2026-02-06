@@ -121,8 +121,23 @@ function App() {
               textDecoration: "none",
               display: "inline-flex",
               alignItems: "center",
+              gap: "16px",
             }}
           >
+            <img
+              src="/William_Marchant.JPG"
+              alt="William Marchant"
+              style={{
+                width: "84px",
+                height: "84px",
+                borderRadius: "50%",
+                objectFit: "cover",
+                objectPosition: "center 20%",
+                border: "2px solid #e8d4b8",
+                boxShadow: "0 1px 3px rgba(0, 0, 0, 0.15)",
+                marginLeft: "-8px",
+              }}
+            />
             <div
               onMouseEnter={() => setNameTagWave(true)}
               onMouseLeave={() => setNameTagWave(false)}
