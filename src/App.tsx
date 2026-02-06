@@ -6,6 +6,7 @@ import "./styles/design-tokens.scss";
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [nameTagWave, setNameTagWave] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -117,15 +118,56 @@ function App() {
           <Link
             to="/"
             style={{
-              fontFamily: "Instrument Serif, Georgia, serif",
-              fontSize: "var(--fs-h3)",
-              fontWeight: 700,
-              color: "#3d3530",
               textDecoration: "none",
-              letterSpacing: "0.02em",
+              display: "inline-flex",
+              alignItems: "center",
             }}
           >
-            William Marchant
+            <div
+              onMouseEnter={() => setNameTagWave(true)}
+              onMouseLeave={() => setNameTagWave(false)}
+              onAnimationEnd={() => setNameTagWave(false)}
+              style={{
+                display: "inline-block",
+                background:
+                  "linear-gradient(180deg, #d9534f 0%, #d9534f 35%, white 35%, white 100%)",
+                padding: "4px 10px",
+                borderRadius: "5px",
+                border: "2px solid #c9302c",
+                boxShadow: "0 0 0 2px white, 0 2px 4px rgba(0, 0, 0, 0.1)",
+                cursor: "pointer",
+                transition: "transform 0.1s ease",
+                transformOrigin: "bottom center",
+                animation: nameTagWave ? "wave 0.6s ease" : "none",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "0.5rem",
+                  fontWeight: 700,
+                  color: "white",
+                  textAlign: "center",
+                  marginBottom: "1px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.5px",
+                  fontFamily: "Barlow, sans-serif",
+                }}
+              >
+                HELLO I'M
+              </div>
+              <div
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  color: "#3d3530",
+                  textAlign: "center",
+                  padding: "2px 6px",
+                  fontFamily: "Barlow, sans-serif",
+                }}
+              >
+                William Marchant
+              </div>
+            </div>
           </Link>
 
           {/* Hamburger menu button for mobile */}

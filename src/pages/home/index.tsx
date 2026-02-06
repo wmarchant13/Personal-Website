@@ -4,6 +4,7 @@ import {
   FaEnvelope,
   FaPhone,
   FaDownload,
+  FaFileAlt,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -103,6 +104,31 @@ export default function Home() {
           outline-offset: 2px;
         }
         
+        /* Newspaper section dividers */
+        .newspaper-rule {
+          border: none;
+          border-top: 1px solid #3d3530;
+          margin: 0;
+          width: 100%;
+          padding-bottom: 10%;
+        }
+        .newspaper-rule-thick {
+          border: none;
+          border-top: 3px double #3d3530;
+          margin: 0;
+          width: 100%;
+        }
+        .drop-cap::first-letter {
+          font-family: 'Instrument Serif', Georgia, serif;
+          float: left;
+          font-size: 4.2em;
+          line-height: 0.8;
+          padding-right: 8px;
+          padding-top: 4px;
+          color: #3d3530;
+          font-weight: 700;
+        }
+        
         a:focus-visible {
           outline: 3px solid #f5f1e8;
           outline-offset: 2px;
@@ -147,19 +173,32 @@ export default function Home() {
             borderRight: isMobile ? undefined : "4px solid #3d3530",
             borderTop: isMobile ? undefined : "4px solid #3d3530",
             width: isMobile ? "100%" : "40%",
-            height: isMobile ? "auto" : "100vh",
+            height: isMobile ? "25vh" : "100vh",
             flexShrink: 0,
             display: "flex",
             flexDirection: "column",
-            justifyContent: isMobile ? "center" : "space-between",
-            background: "#685f57",
+            justifyContent: "center",
+            paddingBottom: isMobile ? "0" : "var(--space-3xl)",
+            background: "#483d36",
+            backgroundImage: `
+              radial-gradient(ellipse at 15% 30%, rgba(60, 48, 38, 0.6) 0%, transparent 45%),
+              radial-gradient(ellipse at 85% 60%, rgba(30, 24, 18, 0.5) 0%, transparent 45%),
+              radial-gradient(ellipse at 50% 0%, rgba(55, 45, 35, 0.2) 0%, transparent 35%),
+              radial-gradient(ellipse at 50% 100%, rgba(25, 20, 15, 0.5) 0%, transparent 35%),
+              radial-gradient(ellipse at 70% 20%, rgba(65, 52, 42, 0.1) 0%, transparent 30%),
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='leather'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23leather)' opacity='0.18'/%3E%3C/svg%3E"),
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23grain)' opacity='0.06'/%3E%3C/svg%3E")
+            `,
             overflow: "hidden",
+            position: "relative",
           }}
         >
           {/* Hero Section */}
           <div
             style={{
-              padding: isMobile ? "var(--space-md)" : "var(--space-2xl)",
+              padding: isMobile
+                ? "var(--space-xs) var(--space-sm)"
+                : "var(--space-2xl)",
             }}
           >
             <section
@@ -168,538 +207,205 @@ export default function Home() {
               style={{ boxSizing: "border-box" }}
             >
               <div className={styles.heroContent}>
+                {/* Newspaper Author Block */}
                 <div
                   style={{
-                    display: "inline-block",
-                    background:
-                      "linear-gradient(180deg, #d9534f 0%, #d9534f 35%, white 35%, white 100%)",
-                    padding: isMobile ? "var(--space-sm)" : "var(--space-md)",
-                    borderRadius: "8px",
-                    border: "3px solid #c9302c",
-                    boxShadow: "0 0 0 3px white, 0 4px 6px rgba(0, 0, 0, 0.1)",
+                    borderTop: "3px double #f5f1e8",
+                    borderBottom: "3px double #f5f1e8",
+                    padding: isMobile
+                      ? "var(--space-xs) 0"
+                      : "var(--space-lg) 0",
                     marginBottom: isMobile
-                      ? "var(--space-sm)"
-                      : "var(--space-md)",
-                    cursor: "pointer",
-                    transition: "transform 0.1s ease",
-                    transformOrigin: "bottom center",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.animation = "wave 0.6s ease";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.animation = "none";
-                  }}
-                  onAnimationEnd={(e) => {
-                    e.currentTarget.style.animation = "none";
+                      ? "var(--space-xs)"
+                      : "var(--space-xl)",
                   }}
                 >
                   <div
                     style={{
-                      fontSize: isMobile ? "0.75rem" : "1rem",
-                      fontWeight: 700,
-                      color: "white",
-                      textAlign: "center",
-                      marginBottom: "4px",
+                      fontSize: isMobile ? "0.55rem" : "0.8rem",
+                      fontWeight: 600,
+                      color: "rgba(245, 241, 232, 0.5)",
                       textTransform: "uppercase",
-                      letterSpacing: "0.5px",
+                      letterSpacing: "0.15em",
                       fontFamily: "Barlow, sans-serif",
+                      marginBottom: isMobile ? "2px" : "var(--space-xs)",
                     }}
                   >
-                    HELLO I'M
+                    Written By
                   </div>
                   <div
                     style={{
-                      fontSize: isMobile ? "1.25rem" : "2rem",
+                      fontSize: isMobile ? "1.2rem" : "2.5rem",
                       fontWeight: 700,
-                      color: "#3d3530",
-                      textAlign: "center",
-                      padding: isMobile
-                        ? "var(--space-xs) var(--space-sm)"
-                        : "var(--space-sm) var(--space-md)",
-                      fontFamily: "Barlow, sans-serif",
+                      color: "#f5f1e8",
+                      fontFamily: "Instrument Serif, Georgia, serif",
+                      lineHeight: 1.1,
+                      marginBottom: isMobile ? "2px" : "var(--space-sm)",
                     }}
                   >
                     William Marchant
                   </div>
+                  <div
+                    style={{
+                      fontSize: isMobile ? "0.75rem" : "1.2rem",
+                      fontStyle: "italic",
+                      color: "#f5f1e8",
+                      fontFamily: "Instrument Serif, Georgia, serif",
+                      marginBottom: isMobile
+                        ? "var(--space-xs)"
+                        : "var(--space-lg)",
+                      opacity: 0.7,
+                    }}
+                  >
+                    Software Engineer
+                  </div>
+                  <hr
+                    style={{
+                      border: "none",
+                      borderTop: "1px solid rgba(245, 241, 232, 0.2)",
+                      margin: isMobile
+                        ? "0 0 var(--space-xs) 0"
+                        : "0 0 var(--space-md) 0",
+                    }}
+                  />
+                  {/* Contact Details */}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: isMobile ? "row" : "column",
+                      gap: isMobile ? "var(--space-sm)" : "var(--space-sm)",
+                    }}
+                  >
+                    <a
+                      href="mailto:wmarchant13@gmail.com"
+                      style={{
+                        color: "#f5f1e8",
+                        textDecoration: "none",
+                        transition: "color 0.2s ease",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        fontSize: isMobile ? "0.65rem" : "1rem",
+                        fontFamily: "Barlow, sans-serif",
+                        fontWeight: 500,
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "#e8d4b8")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "#f5f1e8")
+                      }
+                    >
+                      <FaEnvelope size={isMobile ? 11 : 16} />
+                      wmarchant13@gmail.com
+                    </a>
+                    <span
+                      style={{
+                        color: "#f5f1e8",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        fontSize: isMobile ? "0.65rem" : "1rem",
+                        fontFamily: "Barlow, sans-serif",
+                        fontWeight: 500,
+                      }}
+                    >
+                      <FaPhone size={isMobile ? 11 : 16} />
+                      +1 518-813-7261
+                    </span>
+                  </div>
                 </div>
+
+                {/* Social Icons */}
                 <div
-                  className={styles.heroTagsRow}
                   style={{
-                    paddingBottom: isMobile ? "0" : "20px",
-                    display: isMobile ? "none" : "block",
+                    display: "flex",
+                    gap: isMobile ? "10px" : "15px",
+                    alignItems: "center",
                   }}
                 >
-                  {/* <span
-                  className={styles.heroTag}
-                  style={{ background: "#2c5282", color: "#23242a" }}
-                >
-                  Software Engineer
-                </span> */}
+                  {[
+                    {
+                      href: "https://www.linkedin.com/in/william-marchant-4b2633294/",
+                      label: "LinkedIn",
+                      icon: <FaLinkedin size={isMobile ? 16 : 24} />,
+                      external: true,
+                    },
+                    {
+                      href: "https://github.com/wmarchant13",
+                      label: "GitHub",
+                      icon: <FaGithub size={isMobile ? 16 : 24} />,
+                      external: true,
+                    },
+                    {
+                      href: "/resume.pdf",
+                      label: "Download Resume",
+                      icon: <FaDownload size={isMobile ? 16 : 24} />,
+                      download: "William_Marchant_Resume.pdf",
+                    },
+                    {
+                      href: "https://github.com/wmarchant13/Personal-Website#readme",
+                      label: "Read Me",
+                      icon: <FaFileAlt size={isMobile ? 16 : 24} />,
+                      external: true,
+                    },
+                  ].map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      {...(link.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      {...(link.download ? { download: link.download } : {})}
+                      aria-label={link.label}
+                      style={{
+                        color: "#f5f1e8",
+                        transition: "all 0.2s ease",
+                        display: "inline-block",
+                        position: "relative",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.15)";
+                        e.currentTarget.style.color = "#e8d4b8";
+                        const tooltip =
+                          e.currentTarget.querySelector(".tooltip");
+                        if (tooltip)
+                          (tooltip as HTMLElement).style.opacity = "1";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.color = "#f5f1e8";
+                        const tooltip =
+                          e.currentTarget.querySelector(".tooltip");
+                        if (tooltip)
+                          (tooltip as HTMLElement).style.opacity = "0";
+                      }}
+                    >
+                      {link.icon}
+                      <span
+                        className="tooltip"
+                        style={{
+                          position: "absolute",
+                          bottom: "-30px",
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          background: "#3d3530",
+                          color: "white",
+                          padding: "4px 8px",
+                          paddingTop: "6px",
+                          borderRadius: "4px",
+                          fontSize: "12px",
+                          whiteSpace: "nowrap",
+                          opacity: 0,
+                          transition: "opacity 0.2s ease",
+                          pointerEvents: "none",
+                        }}
+                      >
+                        {link.label}
+                      </span>
+                    </a>
+                  ))}
                 </div>
-                <div
-                  style={{
-                    marginTop: isMobile ? "var(--space-sm)" : "var(--space-lg)",
-                  }}
-                >
-                  {isMobile ? (
-                    // Mobile layout
-                    <>
-                      <div
-                        style={{
-                          display: "flex",
-                          gap: "var(--space-md)",
-                          marginBottom: "var(--space-xs)",
-                          fontSize: "0.9rem",
-                          flexWrap: "wrap",
-                        }}
-                      >
-                        <a
-                          href="mailto:wmarchant13@gmail.com"
-                          style={{
-                            color: "#f5f1e8",
-                            textDecoration: "none",
-                            transition: "color 0.2s ease",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: "6px",
-                            fontWeight: 600,
-                            fontFamily: "Barlow, sans-serif",
-                          }}
-                          onMouseEnter={(e) =>
-                            (e.currentTarget.style.color = "#e8d4b8")
-                          }
-                          onMouseLeave={(e) =>
-                            (e.currentTarget.style.color = "#f5f1e8")
-                          }
-                        >
-                          <FaEnvelope size={"16px"} />
-                          wmarchant13@gmail.com
-                        </a>
-                        <span
-                          style={{
-                            color: "#f5f1e8",
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: "6px",
-                            fontWeight: 600,
-                            fontFamily: "Barlow, sans-serif",
-                          }}
-                        >
-                          <FaPhone size={"16px"} />
-                          +1 518-813-7261
-                        </span>
-                      </div>
-                      <div
-                        style={{
-                          display: "flex",
-                          gap: "10px",
-                          marginTop: "var(--space-md)",
-                        }}
-                      >
-                        <a
-                          href="https://www.linkedin.com/in/william-marchant-4b2633294/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="LinkedIn"
-                          style={{
-                            color: "#f5f1e8",
-                            transition: "all 0.2s ease",
-                            display: "inline-block",
-                            position: "relative",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.15)";
-                            e.currentTarget.style.color = "#e8d4b8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "1";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                            e.currentTarget.style.color = "#f5f1e8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "0";
-                          }}
-                        >
-                          <FaLinkedin size={"20px"} />
-                          <span
-                            className="tooltip"
-                            style={{
-                              position: "absolute",
-                              bottom: "-30px",
-                              left: "50%",
-                              transform: "translateX(-50%)",
-                              background: "#3d3530",
-                              color: "white",
-                              padding: "4px 8px",
-                              paddingTop: "6px",
-                              borderRadius: "4px",
-                              fontSize: "12px",
-                              whiteSpace: "nowrap",
-                              opacity: 0,
-                              transition: "opacity 0.2s ease",
-                              pointerEvents: "none",
-                            }}
-                          >
-                            LinkedIn
-                          </span>
-                        </a>
-                        <a
-                          href="https://github.com/wmarchant13"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="GitHub"
-                          style={{
-                            color: "#f5f1e8",
-                            transition: "all 0.2s ease",
-                            display: "inline-block",
-                            position: "relative",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.15)";
-                            e.currentTarget.style.color = "#e8d4b8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "1";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                            e.currentTarget.style.color = "#f5f1e8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "0";
-                          }}
-                        >
-                          <FaGithub size={"20px"} />
-                          <span
-                            className="tooltip"
-                            style={{
-                              position: "absolute",
-                              bottom: "-30px",
-                              left: "50%",
-                              transform: "translateX(-50%)",
-                              background: "#3d3530",
-                              color: "white",
-                              padding: "4px 8px",
-                              paddingTop: "6px",
-                              borderRadius: "4px",
-                              fontSize: "12px",
-                              whiteSpace: "nowrap",
-                              opacity: 0,
-                              transition: "opacity 0.2s ease",
-                              pointerEvents: "none",
-                            }}
-                          >
-                            GitHub
-                          </span>
-                        </a>
-                        <a
-                          href="/resume.pdf"
-                          download="William_Marchant_Resume.pdf"
-                          aria-label="Download Resume"
-                          style={{
-                            color: "#f5f1e8",
-                            transition: "all 0.2s ease",
-                            display: "inline-block",
-                            position: "relative",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.15)";
-                            e.currentTarget.style.color = "#e8d4b8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "1";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                            e.currentTarget.style.color = "#f5f1e8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "0";
-                          }}
-                        >
-                          <FaDownload size={"20px"} />
-                          <span
-                            className="tooltip"
-                            style={{
-                              position: "absolute",
-                              bottom: "-30px",
-                              left: "50%",
-                              transform: "translateX(-50%)",
-                              background: "#3d3530",
-                              color: "white",
-                              padding: "4px 8px",
-                              paddingTop: "6px",
-                              borderRadius: "4px",
-                              fontSize: "12px",
-                              whiteSpace: "nowrap",
-                              opacity: 0,
-                              transition: "opacity 0.2s ease",
-                              pointerEvents: "none",
-                            }}
-                          >
-                            Download Resume
-                          </span>
-                        </a>
-                      </div>
-                    </>
-                  ) : (
-                    // Desktop layout
-                    <>
-                      <div
-                        style={{
-                          marginBottom: "var(--space-sm)",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "8px",
-                          color: "#f5f1e8",
-                          fontSize: "1.1rem",
-                        }}
-                      >
-                        <FaEnvelope
-                          size={"20px"}
-                          style={{ color: "#f5f1e8" }}
-                        />
-                        <strong
-                          style={{
-                            fontFamily: "Barlow, sans-serif",
-                            fontWeight: 700,
-                          }}
-                        >
-                          Email:
-                        </strong>{" "}
-                        <a
-                          href="mailto:wmarchant13@gmail.com"
-                          style={{
-                            color: "#f5f1e8",
-                            textDecoration: "none",
-                            transition: "color 0.2s ease",
-                            display: "inline-block",
-                            fontWeight: 600,
-                            fontFamily: "Barlow, sans-serif",
-                          }}
-                          onMouseEnter={(e) =>
-                            (e.currentTarget.style.color = "#e8d4b8")
-                          }
-                          onMouseLeave={(e) =>
-                            (e.currentTarget.style.color = "#f5f1e8")
-                          }
-                        >
-                          wmarchant13@gmail.com
-                        </a>
-                      </div>
-                      <div
-                        style={{
-                          marginBottom: "var(--space-sm)",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "8px",
-                          color: "#f5f1e8",
-                          fontSize: "1.1rem",
-                        }}
-                      >
-                        <FaPhone size={"20px"} style={{ color: "#f5f1e8" }} />
-                        <strong
-                          style={{
-                            fontFamily: "Barlow, sans-serif",
-                            fontWeight: 700,
-                          }}
-                        >
-                          Phone:
-                        </strong>{" "}
-                        <span
-                          style={{
-                            color: "#f5f1e8",
-                            fontWeight: 600,
-                            fontFamily: "Barlow, sans-serif",
-                          }}
-                        >
-                          +1 518-813-7261
-                        </span>
-                      </div>
-                      <div
-                        style={{
-                          display: "flex",
-                          gap: "15px",
-                          marginTop: "var(--space-md)",
-                        }}
-                      >
-                        <a
-                          href="https://www.linkedin.com/in/william-marchant-4b2633294/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="LinkedIn"
-                          style={{
-                            color: "#f5f1e8",
-                            transition: "all 0.2s ease",
-                            display: "inline-block",
-                            position: "relative",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.15)";
-                            e.currentTarget.style.color = "#e8d4b8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "1";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                            e.currentTarget.style.color = "#f5f1e8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "0";
-                          }}
-                        >
-                          <FaLinkedin size={"30px"} />
-                          <span
-                            className="tooltip"
-                            style={{
-                              position: "absolute",
-                              bottom: "-35px",
-                              left: "50%",
-                              transform: "translateX(-50%)",
-                              background: "#3d3530",
-                              color: "white",
-                              padding: "6px 10px",
-                              paddingTop: "8px",
-                              borderRadius: "4px",
-                              fontSize: "13px",
-                              whiteSpace: "nowrap",
-                              opacity: 0,
-                              transition: "opacity 0.2s ease",
-                              pointerEvents: "none",
-                            }}
-                          >
-                            LinkedIn
-                          </span>
-                        </a>
-                        <a
-                          href="https://github.com/wmarchant13"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="GitHub"
-                          style={{
-                            color: "#f5f1e8",
-                            transition: "all 0.2s ease",
-                            display: "inline-block",
-                            position: "relative",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.15)";
-                            e.currentTarget.style.color = "#e8d4b8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "1";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                            e.currentTarget.style.color = "#f5f1e8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "0";
-                          }}
-                        >
-                          <FaGithub size={"30px"} />
-                          <span
-                            className="tooltip"
-                            style={{
-                              position: "absolute",
-                              bottom: "-35px",
-                              left: "50%",
-                              transform: "translateX(-50%)",
-                              background: "#3d3530",
-                              color: "white",
-                              padding: "6px 10px",
-                              paddingTop: "8px",
-                              borderRadius: "4px",
-                              fontSize: "13px",
-                              whiteSpace: "nowrap",
-                              opacity: 0,
-                              transition: "opacity 0.2s ease",
-                              pointerEvents: "none",
-                            }}
-                          >
-                            GitHub
-                          </span>
-                        </a>
-                        <a
-                          href="/resume.pdf"
-                          download="William_Marchant_Resume.pdf"
-                          aria-label="Download Resume"
-                          style={{
-                            color: "#f5f1e8",
-                            transition: "all 0.2s ease",
-                            display: "inline-block",
-                            position: "relative",
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "scale(1.15)";
-                            e.currentTarget.style.color = "#e8d4b8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "1";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "scale(1)";
-                            e.currentTarget.style.color = "#f5f1e8";
-                            const tooltip =
-                              e.currentTarget.querySelector(".tooltip");
-                            if (tooltip)
-                              (tooltip as HTMLElement).style.opacity = "0";
-                          }}
-                        >
-                          <FaDownload size={"30px"} />
-                          <span
-                            className="tooltip"
-                            style={{
-                              position: "absolute",
-                              bottom: "-35px",
-                              left: "50%",
-                              transform: "translateX(-50%)",
-                              background: "#3d3530",
-                              color: "white",
-                              padding: "6px 10px",
-                              paddingTop: "8px",
-                              borderRadius: "4px",
-                              fontSize: "13px",
-                              whiteSpace: "nowrap",
-                              opacity: 0,
-                              transition: "opacity 0.2s ease",
-                              pointerEvents: "none",
-                            }}
-                          >
-                            Download Resume
-                          </span>
-                        </a>
-                      </div>
-                    </>
-                  )}
-                </div>
-                {/* <div className={styles.heroSummaryCard}>
-                <div className={styles.experienceCard}>
-                  <p className={styles.cardBody}>
-                    Frontend-focused Software Engineer based out of Buffalo, NY
-                    with full-stack experience, collaborating with clients and
-                    content authors to build scalable, user-friendly
-                    applications. Skilled at translating feedback into
-                    functional features and continuously expanding technical
-                    expertise.
-                  </p>
-                </div>
-              </div> */}
               </div>
             </section>
           </div>
@@ -839,78 +545,125 @@ export default function Home() {
             />
           </div>
 
-          {/* About Section */}
-          <section
-            id="about"
-            className={`section ${styles.fadeInDelayed}`}
-            style={{ position: "relative", zIndex: 1 }}
-          >
-            <div className="container">
-              <h2 style={{ marginBottom: "var(--space-xl)", color: "#3d3530" }}>
-                About
-              </h2>
-              <div className={styles.experienceCard}>
-                <p className={styles.cardBody}>
-                  Frontend-focused Software Engineer based out of Buffalo, NY
-                  with full-stack experience, collaborating with clients and
-                  content authors to build scalable, user-friendly applications.
-                  Skilled at translating feedback into functional features and
-                  continuously expanding technical expertise.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Quote Section */}
-          <section
-            className={`section ${styles.fadeInDelayed}`}
+          {/* About & Quote — fills first viewport, centered */}
+          <div
             style={{
+              minHeight: "calc(100vh - 4px)",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
               position: "relative",
+              // placeContent: "center",
               zIndex: 1,
-              textAlign: "center",
-              paddingBottom: "var(--space-2xl)",
-              padding: "unset",
+              paddingTop: "10%",
             }}
           >
-            <div className="container">
-              <div
-                style={{
-                  maxWidth: "800px",
-                  margin: "0 auto",
-                  padding: "var(--space-xl)",
-                  // borderLeft: "4px solid #3d3530",
-                  background: "rgba(61, 53, 48, 0.03)",
-                  borderRadius: "8px",
-                  top: -50,
-                  position: "relative",
-                }}
-              >
-                <p
+            <section
+              id="about"
+              className={`section ${styles.fadeInDelayed}`}
+              style={{
+                position: "relative",
+                zIndex: 1,
+                width: "100%",
+                padding: 0,
+              }}
+            >
+              <div className="container">
+                <hr className="newspaper-rule-thick" />
+                <h2
                   style={{
-                    fontSize: isMobile ? "1.25rem" : "1.5rem",
-                    fontStyle: "italic",
                     color: "#3d3530",
-                    marginBottom: "var(--space-md)",
                     fontFamily: "Instrument Serif, Georgia, serif",
-                    lineHeight: "1.6",
+                    fontSize: isMobile ? "1.75rem" : "2.25rem",
+                    fontWeight: 700,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    textAlign: "center",
+                    margin: "var(--space-md) 0",
                   }}
                 >
-                  "To give anything less than your best is to sacrifice the
-                  gift."
-                </p>
-                <p
+                  About
+                </h2>
+                <hr className="newspaper-rule" />
+                <div
                   style={{
-                    fontSize: isMobile ? "1rem" : "1.1rem",
-                    color: "#3d3530",
-                    fontFamily: "Barlow, sans-serif",
-                    fontWeight: 600,
+                    marginTop: "var(--space-lg)",
+                    maxWidth: "680px",
+                    marginLeft: "auto",
+                    marginRight: "auto",
                   }}
                 >
-                  — Steve Prefontaine
-                </p>
+                  <p
+                    className="drop-cap"
+                    style={{
+                      fontSize: isMobile ? "1rem" : "1.1rem",
+                      lineHeight: 1.8,
+                      color: "#3d3530",
+                      fontFamily: "Instrument Serif, Georgia, serif",
+                      textAlign: "justify",
+                      fontWeight: 400,
+                    }}
+                  >
+                    Frontend-focused Software Engineer based out of Buffalo, NY
+                    with full-stack experience, collaborating with clients and
+                    content authors to build scalable, user-friendly
+                    applications. Skilled at translating feedback into
+                    functional features and continuously expanding technical
+                    expertise.
+                  </p>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+
+            {/* Quote Section */}
+            <section
+              className={`section ${styles.fadeInDelayed}`}
+              style={{
+                position: "relative",
+                zIndex: 1,
+                textAlign: "center",
+                // padding: "15% 0 ",
+                // paddingTop: "15%",
+                width: "100%",
+              }}
+            >
+              <div className="container">
+                <div
+                  style={{
+                    maxWidth: "800px",
+                    margin: "0 auto",
+                    padding: "var(--space-xl)",
+                    background: "rgba(61, 53, 48, 0.03)",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: isMobile ? "1.25rem" : "1.5rem",
+                      fontStyle: "italic",
+                      color: "#3d3530",
+                      marginBottom: "var(--space-md)",
+                      fontFamily: "Instrument Serif, Georgia, serif",
+                      lineHeight: "1.6",
+                    }}
+                  >
+                    "To give anything less than your best is to sacrifice the
+                    gift."
+                  </p>
+                  <p
+                    style={{
+                      fontSize: isMobile ? "1rem" : "1.1rem",
+                      color: "#3d3530",
+                      fontFamily: "Barlow, sans-serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    — Steve Prefontaine
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
 
           {/* Professional Experience Section */}
           <section
@@ -919,9 +672,23 @@ export default function Home() {
             style={{ position: "relative", zIndex: 1 }}
           >
             <div className="container">
-              <h2 style={{ marginBottom: "var(--space-xl)", color: "#3d3530" }}>
+              <hr className="newspaper-rule-thick" />
+              <h2
+                style={{
+                  color: "#3d3530",
+                  fontFamily: "Instrument Serif, Georgia, serif",
+                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  textAlign: "center",
+                  margin: "var(--space-md) 0",
+                  padding: 0,
+                }}
+              >
                 Professional Experience
               </h2>
+              <hr className="newspaper-rule" />
               <div className={styles.experienceGrid}>
                 <div className={styles.experienceCard}>
                   <div className={styles.cardHeader}>
@@ -1090,9 +857,22 @@ export default function Home() {
           {/* Education Section */}
           <section id="education" className={`section ${styles.fadeInDelayed}`}>
             <div className="container">
-              <h2 style={{ marginBottom: "var(--space-xl)", color: "#3d3530" }}>
+              <hr className="newspaper-rule-thick" />
+              <h2
+                style={{
+                  color: "#3d3530",
+                  fontFamily: "Instrument Serif, Georgia, serif",
+                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  textAlign: "center",
+                  margin: "var(--space-md) 0",
+                }}
+              >
                 Education
               </h2>
+              <hr className="newspaper-rule" />
               <div className={styles.experienceGrid}>
                 <div className={styles.experienceCard}>
                   <div className={styles.cardHeader}>
@@ -1137,9 +917,22 @@ export default function Home() {
             style={{ position: "relative", zIndex: 1 }}
           >
             <div className="container">
-              <h2 style={{ marginBottom: "var(--space-xl)", color: "#3d3530" }}>
+              <hr className="newspaper-rule-thick" />
+              <h2
+                style={{
+                  color: "#3d3530",
+                  fontFamily: "Instrument Serif, Georgia, serif",
+                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  textAlign: "center",
+                  margin: "var(--space-md) 0",
+                }}
+              >
                 Skills
               </h2>
+              <hr className="newspaper-rule" />
               <div className={styles.skillsGrid}>
                 <div className={styles.skillBlock}>
                   <h3 className={styles.skillTitle}>Programming Languages</h3>
@@ -1187,9 +980,22 @@ export default function Home() {
             style={{ position: "relative", zIndex: 1 }}
           >
             <div className="container">
-              <h2 style={{ marginBottom: "var(--space-xl)", color: "#3d3530" }}>
+              <hr className="newspaper-rule-thick" />
+              <h2
+                style={{
+                  color: "#3d3530",
+                  fontFamily: "Instrument Serif, Georgia, serif",
+                  fontSize: isMobile ? "1.75rem" : "2.25rem",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  textAlign: "center",
+                  margin: "var(--space-md) 0",
+                }}
+              >
                 Projects
               </h2>
+              <hr className="newspaper-rule" />
               <div className={styles.experienceGrid}>
                 <div className={styles.experienceCard}>
                   <div className={styles.cardHeader}>
