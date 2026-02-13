@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/wmarchant13/personal-website/compare/v1.2.3...v1.3.0) (2026-02-13)
+
+
+### Bug Fixes
+
+* **homepage:** fixing console errors ([1077216](https://github.com/wmarchant13/personal-website/commit/107721632320e5de9b03a8e527c2af1ac0afd6e2))
+* **homepage:** fixing hero slide on tab use ([e67efad](https://github.com/wmarchant13/personal-website/commit/e67efad23ad2a34411801b9ef49cc0eef3f8e5a6))
+
+
+### Features
+
+* **homepage:** hero slides up upon scroll on mobile ([33cfc68](https://github.com/wmarchant13/personal-website/commit/33cfc68d191682915b0cc129dc2c74b49f4bedc7))
+
 ## [1.2.3](https://github.com/wmarchant13/personal-website/compare/v1.2.2...v1.2.3) (2026-02-13)
 
 
