@@ -16,13 +16,13 @@ const Education = ({ label, title, subtitle, items }: EducationProps) => {
         <div className={styles.cardSubtitle}>{subtitle}</div>
       </div>
       {items && items.length > 0 && (
-        <p className={styles.cardBody}>
+        <div className={styles.cardBody}>
           <ul className={styles.itemList}>
             {items.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={item ?? i}>{item}</li>
             ))}
           </ul>
-        </p>
+        </div>
       )}
     </div>
   );

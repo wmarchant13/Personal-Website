@@ -238,8 +238,8 @@ const Home = ({
 
             <div className={styles.experienceGrid}>
               {projectSection &&
-                projectSection?.projects?.map((project: ProjectProps) => (
-                  <Project {...project} />
+                projectSection?.projects?.map((project: ProjectProps, i: number) => (
+                  <Project key={project.title ?? project.subtitle ?? i} {...project} />
                 ))}
             </div>
           </section>

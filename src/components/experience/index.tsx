@@ -27,7 +27,7 @@ const Experience = ({
       </div>
       <p className={styles.cardBody}>{children}</p>
       {skills && skills.length > 0 && (
-        <p className={styles.cardBody}>
+        <div className={styles.cardBody}>
           <ul className={styles.skillList}>
             {skills.map((skill) => (
               <li className={styles.skillTag} key={skill}>
@@ -35,7 +35,7 @@ const Experience = ({
               </li>
             ))}
           </ul>
-        </p>
+        </div>
       )}
       {skillIcons && skillIcons.length > 0 && (
         <div className={styles.techIconWrapper}>
