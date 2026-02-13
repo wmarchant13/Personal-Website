@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/wmarchant13/personal-website/compare/v1.2.0...v1.2.1) (2026-02-13)
+
+
+### Bug Fixes
+
+* **homepage:** address mobile issue, merge to main ([e2e2ed3](https://github.com/wmarchant13/personal-website/commit/e2e2ed304b7babe1a19777c5867ac83cfa04f2ef))
+* **homepage:** fixing mobile display issue ([69b9324](https://github.com/wmarchant13/personal-website/commit/69b9324897b39569c609bc0c3b7e20226e77bc02))
+
 # [1.2.0](https://github.com/wmarchant13/personal-website/compare/v1.1.0...v1.2.0) (2026-02-13)
 
 ### Features
