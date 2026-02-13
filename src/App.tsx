@@ -1,15 +1,15 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
+import "./styles/design-tokens.scss";
+import Navbar from "./components/navbar";
+import { homeData } from "./pages/home/data";
 
 function App() {
   return (
     <div>
-      <nav style={{ display: "flex", gap: "1rem" }}>
-        <Link to="/">Home</Link>
-      </nav>
-
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home {...homeData} />} />
       </Routes>
     </div>
   );

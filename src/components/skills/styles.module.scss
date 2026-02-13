@@ -1,0 +1,61 @@
+@use "../../styles/mixins" as *;
+
+.skillsGrid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}
+
+.skillBlock {
+  background: transparent;
+  padding: 0 0 var(--space-md) 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #3d3530;
+  transition: none;
+}
+
+.skillTitle {
+  font-size: calc(var(--fs-body) + 1px);
+  font-weight: 700;
+  color: #3d3530;
+  margin-bottom: var(--space-sm);
+  font-family: "Instrument Serif", Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillTag {
+  font-size: var(--fs-caption);
+  color: #3d3530;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 450;
+  font-family: "Barlow", sans-serif;
+}
+
+.skillTag::after {
+  content: "\2022";
+  margin: 0 var(--space-xs);
+  color: rgba(139, 115, 85, 0.4);
+}
+
+.skillTag:last-child::after {
+  content: "";
+  margin: 0;
+}
