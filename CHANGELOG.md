@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/wmarchant13/personal-website/compare/v1.2.2...v1.2.3) (2026-02-13)
+
+
+### Bug Fixes
+
+* **homepage:** adding scrollspy fix ([cef5ba6](https://github.com/wmarchant13/personal-website/commit/cef5ba612cde06efdefdf2a419ab2d3a9bfcefb9))
+
 ## [1.2.2](https://github.com/wmarchant13/personal-website/compare/v1.2.1...v1.2.2) (2026-02-13)
 
 
