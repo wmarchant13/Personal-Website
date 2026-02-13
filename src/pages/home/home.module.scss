@@ -9,7 +9,15 @@
   position: relative;
 
   @include mobile {
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: var(--hero-vh, 25vh) 1fr;
+    transition: grid-template-rows 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+}
+
+@include mobile {
+  .pageWrapperHeroCollapsed {
+    grid-template-rows: 0 1fr !important;
   }
 }
 
@@ -61,6 +69,20 @@
     width: 100%;
     height: 25vh;
     padding-bottom: 0;
+    transition:
+      height 1s cubic-bezier(0.25, 0.1, 0.25, 1),
+      opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1),
+      transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+}
+
+@include mobile {
+  .leftSideCollapsed {
+    height: 0 !important;
+    min-height: 0 !important;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
   }
 }
 
@@ -86,7 +108,7 @@
   background-attachment: local;
   position: relative;
   scrollbar-width: none;
-  ms-overflow-style: none;
+  -ms-overflow-style: none;
   width: 60%;
 
   section {
