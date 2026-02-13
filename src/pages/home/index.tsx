@@ -79,6 +79,31 @@ const Home = ({
     return () => scrollContainer.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
 
+  useEffect(() => {
+    // Delegated click handler: catches clicks on dynamically rendered nav links
+    const delegatedHandler = (e: Event) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+
+      const link =
+        target.closest &&
+        (target.closest('a[href="#about"]') as HTMLAnchorElement | null);
+      if (link) {
+        // Let any navbar handlers run, then force-scroll/reset hero
+        setTimeout(() => {
+          if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTop = 0;
+            setHeroHeight(25);
+          }
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }, 0);
+      }
+    };
+
+    document.addEventListener("click", delegatedHandler);
+    return () => document.removeEventListener("click", delegatedHandler);
+  }, []);
+
   return (
     <>
       <div
