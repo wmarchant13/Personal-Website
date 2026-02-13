@@ -1,0 +1,184 @@
+@use "../../styles/mixins" as *;
+
+.navbar {
+  background: #f5f1e8;
+  border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+  padding: var(--space-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Barlow, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.logoLink {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoImage {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 2px solid #e8d4b8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin-left: -8px;
+}
+
+.nameTag {
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    #d9534f 0%,
+    #d9534f 35%,
+    white 35%,
+    white 100%
+  );
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 2px solid #c9302c;
+  box-shadow:
+    0 0 0 2px white,
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  transform-origin: bottom center;
+
+  &.wave {
+    animation: wave 0.6s ease;
+  }
+}
+
+.nameTagGreeting {
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: Barlow, sans-serif;
+}
+
+.nameTagName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3d3530;
+  text-align: center;
+  padding: 2px 6px;
+  font-family: Barlow, sans-serif;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(-10deg);
+  }
+  20%,
+  40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(-2deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburgerBar {
+  width: 24px;
+  height: 2px;
+  background: #3d3530;
+}
+
+.desktopMenu {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.navLink {
+  color: rgba(61, 53, 48, 0.7);
+  text-decoration: none;
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  transition:
+    color var(--transition-base),
+    background 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: #3d3530;
+  }
+
+  &.active {
+    color: #3d3530;
+    font-weight: 700;
+    border-radius: 16px;
+  }
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #f5f1e8;
+  border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mobileNavLink {
+  color: rgba(61, 53, 48, 0.7);
+  text-decoration: none;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  padding: var(--space-sm);
+  cursor: pointer;
+
+  &.active {
+    color: #3d3530;
+    font-weight: 700;
+  }
+}
