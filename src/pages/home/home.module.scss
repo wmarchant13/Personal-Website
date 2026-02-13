@@ -52,8 +52,8 @@
       rgba(65, 52, 42, 0.1) 0%,
       transparent 30%
     ),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='leather'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23leather)' opacity='0.18'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='2' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23grain)' opacity='0.06'/%3E%3C/svg%3E");
+    url("../../../public/images/leather.svg"),
+    url("../../../public/images/grain.svg");
 
   @include mobile {
     border-right: none;
@@ -82,7 +82,7 @@
   max-height: 100vh;
   overflow-y: auto;
   background: #f5f1e8;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+  background-image: url("../../../public/images/noise.svg");
   background-attachment: local;
   position: relative;
   scrollbar-width: none;
@@ -259,11 +259,7 @@ button:focus-visible,
   outline: 3px solid #f5f1e8;
   outline-offset: 3px;
 }
-// --- End merged optimized.module.scss ---
-
-/* Home page styles - Minimalist Matte Resume (SCSS) */
-
-// Professional Animations
+/* Minimal page styles retained (animations + experience grid) */
 .fadeIn {
   opacity: 0;
   transform: translateY(24px);
@@ -286,13 +282,6 @@ button:focus-visible,
 .pageWrapper {
   height: auto;
   position: relative;
-}
-.pageContainer {
-  background-color: white;
-  width: 90%;
-  height: auto;
-  border-radius: 20px;
-  margin: 0 auto;
 }
 
 .hero {
@@ -345,10 +334,7 @@ button:focus-visible,
   transition: color 0.2s;
 }
 
-// .heroDescription a:hover {
-//   text-decoration: underline;
-//   color: #18191c;
-// }
+/* removed unused .heroDescription a:hover */
 
 .heroActions {
   display: flex;
@@ -367,11 +353,6 @@ button:focus-visible,
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   will-change: background, box-shadow, transform;
   overflow: hidden;
-}
-
-.heroDark .container {
-  position: relative;
-  z-index: 2;
 }
 
 .heroEdge {
@@ -418,11 +399,7 @@ button:focus-visible,
   }
 }
 
-// .experienceCard:hover {
-//   background: var(--surface-hover);
-//   box-shadow: var(--shadow);
-//   transform: translateY(-2px);
-// }
+/* removed unused .experienceCard:hover */
 
 .cardHeader {
   margin-bottom: var(--space-sm);
@@ -494,10 +471,7 @@ button:focus-visible,
   transition: none;
 }
 
-// .skillBlock:hover {
-//   background: var(--surface-hover);
-//   border-color: var(--border);
-// }
+/* removed unused .skillBlock:hover */
 
 .skillTitle {
   font-size: calc(var(--fs-body) + 1px);
@@ -579,10 +553,7 @@ button:focus-visible,
     box-shadow var(--transition-base);
 }
 
-// .contactButton:hover {
-//   transform: translateY(-2px);
-//   box-shadow: var(--shadow-lg);
-// }
+/* removed unused .contactButton:hover */
 
 .heroTag {
   display: inline-flex;
@@ -597,9 +568,7 @@ button:focus-visible,
   transition: transform 0.18s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
 
-// .heroTag:hover {
-//   transform: translateY(-2px) scale(1.04);
-// }
+/* removed unused .heroTag:hover */
 
 .contactInfoBox {
   background: #fff;
@@ -615,9 +584,7 @@ button:focus-visible,
   transition: box-shadow 0.3s cubic-bezier(0.2, 0, 0.38, 0.9);
 }
 
-// .contactInfoBox:hover {
-//   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.14);
-// }
+/* removed unused .contactInfoBox:hover */
 
 .contactInfoRow {
   display: flex;
@@ -642,10 +609,7 @@ button:focus-visible,
   transition: color 0.2s;
 }
 
-// .contactInfoValue:hover {
-//   text-decoration: underline;
-//   color: #18191c;
-// }
+/* removed unused .contactInfoValue:hover */
 
 .contactInfoValue svg {
   display: inline-block;
