@@ -61,7 +61,8 @@ const Navbar = () => {
 
     const onScroll = () => {
       let found = "";
-      const threshold = 150;
+      // Higher threshold on mobile means section activates sooner
+      const threshold = isMobile ? 500 : 200;
 
       for (const id of sectionIds) {
         const section = document.getElementById(id);
@@ -76,7 +77,7 @@ const Navbar = () => {
         }
       }
 
-      setActiveSection(found || "about");
+      setActiveSection((found || sectionIds[0]) as string);
       setClickedSection("");
     };
 
