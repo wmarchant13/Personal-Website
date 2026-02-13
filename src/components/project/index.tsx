@@ -23,13 +23,15 @@ const Project = ({
         <div className={styles.cardSubtitle}>{subtitle}</div>
       </div>
       <p className={styles.cardBody}>{children}</p>
-      <p className={styles.cardBody}>
+      <div className={styles.cardBody}>
         <ul className={styles.skillList}>
           {skills?.map((skill) => (
-            <li className={styles.skillTag}>{skill}</li>
+            <li className={styles.skillTag} key={skill}>
+              {skill}
+            </li>
           ))}
         </ul>
-      </p>
+      </div>
       <div className={styles.techIconWrapper}>
         {skillIcons?.map((icon) => icon)}
       </div>

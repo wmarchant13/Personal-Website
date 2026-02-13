@@ -29,6 +29,7 @@ const Home = ({
   const heroRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [heroHeight, setHeroHeight] = useState(25);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -57,31 +58,92 @@ const Home = ({
         scrollContainer.scrollHeight - scrollContainer.clientHeight;
       const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
       setScrollProgress(progress);
+
+      if (isMobile) {
+        // Make hero return faster and smoother
+        const maxScroll = 120; // Lower value = faster restoration
+        const minHero = 0;
+        const maxHero = 25;
+        // Clamp scrollTop to maxScroll for smoothness
+        const clampedScroll = Math.min(scrollTop, maxScroll);
+        const newHeroHeight = Math.max(
+          minHero,
+          maxHero - (clampedScroll / maxScroll) * maxHero,
+        );
+        setHeroHeight(newHeroHeight);
+      }
     };
 
     scrollContainer.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => scrollContainer.removeEventListener("scroll", handleScroll);
+  }, [isMobile]);
+
+  useEffect(() => {
+    // Delegated click handler: catches clicks on dynamically rendered nav links
+    const delegatedHandler = (e: Event) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+
+      const link =
+        target.closest &&
+        (target.closest('a[href="#about"]') as HTMLAnchorElement | null);
+      if (link) {
+        // Let any navbar handlers run, then force-scroll/reset hero
+        setTimeout(() => {
+          if (scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTop = 0;
+            setHeroHeight(25);
+          }
+          window.scrollTo({ top: 0, behavior: "auto" });
+        }, 0);
+      }
+    };
+
+    document.addEventListener("click", delegatedHandler);
+    return () => document.removeEventListener("click", delegatedHandler);
   }, []);
 
   return (
     <>
-      <div className={styles.pageWrapper}>
+      <div
+        className={styles.pageWrapper}
+        style={
+          isMobile
+            ? ({ "--hero-vh": `${heroHeight}vh` } as React.CSSProperties)
+            : {}
+        }
+      >
         {/* Left side: sticky hero and contact */}
         <div
           onWheel={(e) => {
             if (isMobile) return; // Don't forward scroll on mobile
             e.preventDefault();
             if (scrollContainerRef.current) {
+              // Remove speed multiplier to prevent bounce
               scrollContainerRef.current.scrollBy({
                 top: e.deltaY,
                 behavior: "instant",
               });
             }
           }}
-          className={styles.leftSideContainer}
+          className={
+            styles.leftSideContainer
+            // If you want to collapse left side on mobile, add logic here
+          }
         >
           {/* Hero Section */}
-          <div className={styles.heroWrapper}>
+          <div
+            className={styles.heroWrapper}
+            style={
+              isMobile
+                ? {
+                    transition: "height 0.25s cubic-bezier(0.4, 0, 0.2, 1)",
+                    height: `var(--hero-vh, 25vh)`,
+                  }
+                : {}
+            }
+          >
             {heroSection && <Hero {...heroSection} />}
           </div>
         </div>
@@ -176,8 +238,8 @@ const Home = ({
 
             <div className={styles.experienceGrid}>
               {projectSection &&
-                projectSection?.projects?.map((project: ProjectProps) => (
-                  <Project {...project} />
+                projectSection?.projects?.map((project: ProjectProps, i: number) => (
+                  <Project key={project.title ?? project.subtitle ?? i} {...project} />
                 ))}
             </div>
           </section>
