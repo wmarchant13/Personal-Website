@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/wmarchant13/personal-website/compare/v1.2.1...v1.2.2) (2026-02-13)
+
+
+### Bug Fixes
+
+* **homepage:** adding padding bottom on mobile for scroll ([689130c](https://github.com/wmarchant13/personal-website/commit/689130cd4f2f7b5a430390805e37f733396fcac3))
+
 ## [1.2.1](https://github.com/wmarchant13/personal-website/compare/v1.2.0...v1.2.1) (2026-02-13)
 
 
