@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "private": true,
   "type": "module",
-  "homepage": "https://wmarchant13.github.io/personal-website",
+  "homepage": "https://wmarchant13.github.io/Personal-Website",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
