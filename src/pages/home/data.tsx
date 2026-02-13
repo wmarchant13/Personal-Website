@@ -47,7 +47,7 @@ export const homeData: HomeProps = {
         download: "William_Marchant_Resume.pdf",
       },
       {
-        href: "https://github.com/wmarchant13/Personal-Website#readme",
+        href: "https://github.com/wmarchant13/personal-website#readme",
         label: "Read Me",
         icon: <FaFileAlt />,
         external: true,
