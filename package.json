@@ -3,10 +3,12 @@
   "version": "1.2.0",
   "private": true,
   "type": "module",
+  "homepage": "https://wmarchant13.github.io/personal-website",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "prepare": "husky",
     "commit": "git add . && git-cz && git push origin $(git symbolic-ref --short HEAD)"
@@ -70,6 +72,7 @@
     "@semantic-release/release-notes-generator": "^14.1.0",
     "@types/bun": "latest",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "gh-pages": "^6.3.0"
   }
 }
