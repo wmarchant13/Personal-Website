@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import App from "./App";
 
 // Prevent body scrolling — content scrolls inside its own container
@@ -9,7 +9,7 @@ document.documentElement.style.overflow = "hidden";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <App />
-  </BrowserRouter>,
+  </HashRouter>,
 );

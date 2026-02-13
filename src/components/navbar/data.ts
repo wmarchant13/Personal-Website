@@ -7,7 +7,7 @@ export const navLinks = [
 ];
 
 export const logoConfig = {
-  imageSrc: "../images/William_Marchant.JPG",
+  imageSrc: `/Personal-Website/images/William_Marchant.JPG`,
   imageAlt: "William Marchant",
   greeting: "HELLO I'M",
   name: "William Marchant",
