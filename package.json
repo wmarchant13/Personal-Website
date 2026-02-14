@@ -5,20 +5,14 @@
   "type": "module",
   "homepage": "https://wmarchant13.github.io/personal-website",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
     "predeploy": "bun run build",
     "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject",
     "prepare": "husky",
     "commit": "git add . && git-cz && git push origin $(git symbolic-ref --short HEAD)"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "release-it": {
     "npm": {
@@ -36,18 +30,6 @@
       "path": "./custom-adapters/cz-custom.cjs"
     }
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "dependencies": {
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
@@ -57,13 +39,12 @@
     "@testing-library/user-event": "^13.5.0",
     "commitizen": "^4.3.1",
     "husky": "^9.1.7",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.6",
-    "react-scripts": "5.0.1",
     "semantic-release": "^25.0.2",
-    "web-vitals": "^2.1.4"
+    "next": "16.1.6"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
@@ -74,6 +55,11 @@
     "@types/bun": "latest",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "@types/node": "^20",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "typescript": "^5"
   }
 }

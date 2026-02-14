@@ -43,32 +43,18 @@
 }
 
 .cardSubtitle {
-  font-size: calc(var(--fs-body-sm) + 1px);
-  color: rgba(61, 53, 48, 0.7);
-  font-weight: 500;
-  font-style: italic;
-  margin-bottom: var(--space-sm);
+  font-size: var(--fs-body);
+  color: #3d3530;
+  opacity: 0.7;
+  margin-bottom: var(--space-xs);
 }
 
 .cardBody {
-  font-size: calc(var(--fs-body-sm) + 1px);
-  line-height: 1.8;
-  color: #3d3530;
-  font-weight: 400;
-  text-align: justify;
-  font-family: "Instrument Serif", Georgia, serif;
-
-  @include mobile {
-    font-size: var(--fs-body-sm);
-    line-height: 1.65;
-  }
+  margin-top: var(--space-xs);
 }
 
 .itemList {
-  padding-left: var(--space-lg);
+  list-style: disc inside;
+  padding-left: 0;
   margin: 0;
-
-  li {
-    margin-bottom: var(--space-xs);
-  }
 }

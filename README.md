@@ -46,31 +46,6 @@ Features
 - Responsive components and a mobile-friendly navigation
 - Data-driven sections (projects, experience, education, skills) stored in `src/pages/home/data.tsx`
 
-Quick start
-
-1. Install dependencies
-
-```bash
-bun install
-```
-
-2. Start development server
-
-```bash
-bun start
-```
-
-3. Build for production
-
-```bash
-bun build
-```
-
-Useful commands
-
-- `bun start` — run dev server
-- `bun build` — build production assets
-
 Project structure (high level)
 
 - `src/pages/home` — home page, data and styles
