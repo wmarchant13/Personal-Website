@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 
-
 const isGH = process.env.NEXT_PUBLIC_GH_PAGES === "true";
 const repo = "personal-website";
 const nextConfig: NextConfig = {
