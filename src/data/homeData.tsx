@@ -1,4 +1,4 @@
-import { HomeProps } from ".";
+import { HomeProps } from "@/pages/home";
 import {
   SiPostgresql,
   SiTypescript,

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../../utililties/useIsMobile";
-import { navLinks, logoConfig } from "./data";
+import { navLinks, logoConfig } from "../../data/navbarData";
 import styles from "./index.module.scss";
 
 import "../../styles/design-tokens.scss";

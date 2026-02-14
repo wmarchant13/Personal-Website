@@ -34,6 +34,7 @@ const Home = ({
   const isMobile = useIsMobile();
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const hero = heroRef.current;
     if (!hero) return;
     const heroScrolledClass = styles.heroScrolled || "heroScrolled";
