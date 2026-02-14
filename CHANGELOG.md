@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/wmarchant13/personal-website/compare/v1.3.0...v1.3.1) (2026-02-14)
+
+
+### Bug Fixes
+
+* **main:** resume download and icon styles ([0e81c84](https://github.com/wmarchant13/personal-website/commit/0e81c84eb563a60f7d3878cd81420f33b16ae1d4))
+
 # [1.3.0](https://github.com/wmarchant13/personal-website/compare/v1.2.3...v1.3.0) (2026-02-13)
 
 
