@@ -1,3 +1,44 @@
+# Next.js/Turbopack cache
+.next/cache
+.next/turbo
+
+# Next.js build output
+.next/
+out/
+
+# Bun lockfile
+bun.lock
+
+# Build artifacts
+build/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# npm/yarn lockfiles
+package-lock.json
+yarn.lock
+
+# Test and coverage
+coverage/
+*.lcov
+
+# Misc
+*.log
+*.tsbuildinfo
+*.tgz
+logs/
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+# Next.js/Turbopack cache
+.next/cache
+.next/turbo
 # dependencies (bun install)
 node_modules
 

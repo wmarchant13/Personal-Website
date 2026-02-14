@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../../utililties/useIsMobile";
 import { navLinks, logoConfig } from "./data";
@@ -90,7 +91,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        <Link to={logoConfig.linkTo} className={styles.logoLink}>
+        <Link href={logoConfig.linkTo} className={styles.logoLink}>
           <img
             src={logoConfig.imageSrc}
             alt={logoConfig.imageAlt}

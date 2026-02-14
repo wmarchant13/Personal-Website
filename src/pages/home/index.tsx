@@ -1,3 +1,4 @@
+"use client";
 import styles from "./home.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Project, { ProjectProps } from "../../components/project";
@@ -238,9 +239,14 @@ const Home = ({
 
             <div className={styles.experienceGrid}>
               {projectSection &&
-                projectSection?.projects?.map((project: ProjectProps, i: number) => (
-                  <Project key={project.title ?? project.subtitle ?? i} {...project} />
-                ))}
+                projectSection?.projects?.map(
+                  (project: ProjectProps, i: number) => (
+                    <Project
+                      key={project.title ?? project.subtitle ?? i}
+                      {...project}
+                    />
+                  ),
+                )}
             </div>
           </section>
 
