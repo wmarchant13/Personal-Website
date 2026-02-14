@@ -26,15 +26,21 @@
   gap: 16px;
 }
 
-.logoImage {
+.logoContainer {
   width: 84px;
   height: 84px;
+  overflow: hidden;
   border-radius: 50%;
-  object-fit: cover;
+
   object-position: center 20%;
   border: 2px solid #e8d4b8;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   margin-left: -8px;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
 }
 
 .nameTag {

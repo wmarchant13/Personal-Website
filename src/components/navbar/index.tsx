@@ -3,9 +3,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../../utililties/useIsMobile";
 import { navLinks, logoConfig } from "../../data/navbarData";
+import Image from "next/image";
 import styles from "./index.module.scss";
-
-import "../../styles/design-tokens.scss";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -92,11 +91,15 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href={logoConfig.linkTo} className={styles.logoLink}>
-          <img
-            src={logoConfig.imageSrc}
-            alt={logoConfig.imageAlt}
-            className={styles.logoImage}
-          />
+          <div className={styles.logoContainer}>
+            <Image
+              src={logoConfig.imageSrc}
+              alt={logoConfig.imageAlt}
+              className={styles.logoImage}
+              width={300}
+              height={450}
+            />
+          </div>
           <div
             onMouseEnter={() => setNameTagWave(true)}
             onMouseLeave={() => setNameTagWave(false)}

@@ -57,3 +57,20 @@ License
 - See the repository root for license information (if any).
 
 Enjoy! — William Marchant
+
+## Deployment to GitHub Pages
+
+This site is deployed to GitHub Pages at: https://wmarchant13.github.io/personal-website
+
+### Deploy steps
+
+1. Build the static site:
+   ```sh
+   bun run build
+   ```
+2. Deploy to GitHub Pages:
+   ```sh
+   bun run deploy
+   ```
+
+The deployment uses the `gh-pages` package to publish the `out` directory to the `gh-pages` branch.

@@ -1,15 +1,13 @@
-import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === "production";
+const publicBasePath = isProd ? "/personal-website" : "";
 
-const isGH = process.env.NEXT_PUBLIC_GH_PAGES === "true";
-const repo = "personal-website";
-const nextConfig: NextConfig = {
-  reactCompiler: true,
-  ...(isGH && {
-    basePath: `/${repo}`,
-    assetPrefix: `/${repo}/`,
-    trailingSlash: true,
-    output: "export",
-  }),
+const nextConfig = {
+  output: "export", // static export required for GH Pages
+  basePath: publicBasePath,
+  assetPrefix: publicBasePath ? `${publicBasePath}/` : "",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

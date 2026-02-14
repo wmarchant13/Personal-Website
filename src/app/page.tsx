@@ -1,5 +1,8 @@
-import Home from "../pages/home";
+import HomePage from "../components/home-page";
 import { homeData } from "@/data/homeData";
-export default function Page() {
-  return <Home {...homeData} />;
+
+export const dynamic = "error";
+
+export default function IndexPage() {
+  return <HomePage {...homeData} />;
 }

@@ -1,16 +1,15 @@
-import "../styles/design-tokens.scss";
-import "../styles/_mixins.scss";
 import "../styles/globals.scss";
-import type { ReactNode } from "react";
 import Navbar from "../components/navbar";
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-      </body>
+      <Navbar />
+      <body>{children}</body>
     </html>
   );
 }

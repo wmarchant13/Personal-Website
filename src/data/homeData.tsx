@@ -1,4 +1,4 @@
-import { HomeProps } from "@/pages/home";
+import { HomePageProps } from "@/components/home-page";
 import {
   SiPostgresql,
   SiTypescript,
@@ -20,7 +20,7 @@ import { DiGithubBadge } from "react-icons/di";
 import { TbWebhook } from "react-icons/tb";
 import { FaLinkedin, FaGithub, FaDownload, FaFileAlt } from "react-icons/fa";
 
-export const homeData: HomeProps = {
+export const homeData: HomePageProps = {
   heroSection: {
     preTitle: "Written By",
     name: "William Marchant",

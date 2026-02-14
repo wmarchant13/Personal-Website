@@ -1,3 +1,5 @@
+import { assetPath } from "../utililties/assetPath";
+
 export const navLinks = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
@@ -7,7 +9,7 @@ export const navLinks = [
 ];
 
 export const logoConfig = {
-  imageSrc: "/images/William_Marchant.JPG",
+  imageSrc: assetPath("/images/William_Marchant.JPG"),
   imageAlt: "William Marchant",
   greeting: "HELLO I'M",
   name: "William Marchant",
