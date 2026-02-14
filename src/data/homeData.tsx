@@ -19,6 +19,7 @@ import {
 import { DiGithubBadge } from "react-icons/di";
 import { TbWebhook } from "react-icons/tb";
 import { FaLinkedin, FaGithub, FaDownload, FaFileAlt } from "react-icons/fa";
+import { assetPath } from "@/utililties/assetPath";
 
 export const homeData: HomePageProps = {
   heroSection: {
@@ -41,7 +42,7 @@ export const homeData: HomePageProps = {
         external: true,
       },
       {
-        href: "/resume.pdf",
+        href: assetPath("/resume.pdf"),
         label: "Download Resume",
         icon: <FaDownload />,
         download: "William_Marchant_Resume.pdf",
