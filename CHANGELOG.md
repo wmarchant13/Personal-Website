@@ -1,3 +1,11 @@
+## [1.3.2](https://github.com/wmarchant13/personal-website/compare/v1.3.1...v1.3.2) (2026-02-19)
+
+
+### Bug Fixes
+
+* **build:**  fixing next.js errors, updating content ([a13214e](https://github.com/wmarchant13/personal-website/commit/a13214ef077d248de66ec59959b5de8eb46ae1f9))
+* **build:**  merge updates ([7868e46](https://github.com/wmarchant13/personal-website/commit/7868e466662db894b6fab5a3687c7b0e0863af6e))
+
 ## [1.3.1](https://github.com/wmarchant13/personal-website/compare/v1.3.0...v1.3.1) (2026-02-14)
 
 
