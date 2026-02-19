@@ -14,8 +14,6 @@ Contributing / Commits
 
 This project uses Conventional Commits. Use the provided commit helper:
 
-- `bun run commit` — opens Commitizen to create a conventional commit and pushes the branch.
-
 Linting & commit hooks
 
 - Commit messages are validated by `commitlint`.

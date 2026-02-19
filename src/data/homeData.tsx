@@ -15,6 +15,9 @@ import {
   SiStorybook,
   SiGitlab,
   SiCypress,
+  SiNextdotjs,
+  SiGithubcopilot,
+  SiBun,
 } from "react-icons/si";
 import { DiGithubBadge } from "react-icons/di";
 import { TbWebhook } from "react-icons/tb";
@@ -130,17 +133,19 @@ export const homeData: HomePageProps = {
         skillIcons: [<SiPostgresql key="postgres-db" title="PostgreSql" />],
       },
       {
-        title: "UB Roomies",
-        subtitle: "University Project",
+        title: "Personal Website",
+        subtitle: "Personal Project",
         children:
-          "Built a roommate-finder web app for UB students using TypeScript, JavaScript, React, HTML, and CSS. Implemented features for friending, messaging, posting, and apartment listings.",
-        skills: ["TypeScript", "JavaScript", "React", "HTML", "CSS"],
+          "Built and deployed a personal portfolio website using React, Next.js, Bun, TypeScript, SCSS, and HTML. Designed responsive, performance-optimized UI with modern component architecture. Implemented CI pipeline for automated semantic versioned releases and changelog updates. Leveraged AI tools such as Cursor and GitHub Copilot to accelerate development.",
+        skills: ["TypeScript", "React", "HTML", "SCSS", "Bun", "Next.js", "AI"],
         skillIcons: [
-          <SiTypescript key="ts-ub-roomies" title="TypeScript" />,
-          <SiJavascript key="js-ub-roomies" title="JavaScript" />,
-          <SiReact key="react-ub-roomies" title="React" />,
-          <SiHtml5 key="html-ub-roomies" title="HTML5" />,
-          <SiCss3 key="css-ub-roomies" title="CSS3" />,
+          <SiTypescript key="ts-personal-website" title="TypeScript" />,
+          <SiReact key="react-personal-website" title="React" />,
+          <SiHtml5 key="html-personal-website" title="HTML5" />,
+          <SiSass key="sass-personal-website" title="Sass" />,
+          <SiNextdotjs key="next.js-personal-website" title="Next.js" />,
+          <SiGithubcopilot key="copilot-personal-website" title="Copilot" />,
+          <SiBun key="bun-personal-website" title="Bun" />,
         ],
       },
       {
