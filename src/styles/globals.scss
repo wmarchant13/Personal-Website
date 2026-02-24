@@ -66,3 +66,26 @@ p {
 }
 
 // Utility classes and resets from CRA build can be added here as needed
+
+/* Mobile: reset extra spacing introduced by copy/paste */
+@media (max-width: 768px) {
+  html,
+  body,
+  p,
+  a,
+  li,
+  span,
+  label,
+  button,
+  input,
+  textarea,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: 0 !important; /* remove extra letter spacing */
+    word-spacing: 0 !important; /* remove extra word spacing */
+  }
+}
