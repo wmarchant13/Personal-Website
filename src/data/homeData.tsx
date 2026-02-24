@@ -21,7 +21,15 @@ import {
 } from "react-icons/si";
 import { DiGithubBadge } from "react-icons/di";
 import { TbWebhook } from "react-icons/tb";
-import { FaLinkedin, FaGithub, FaDownload, FaFileAlt, FaTrophy, FaMedal, FaHandsHelping } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaDownload,
+  FaFileAlt,
+  FaTrophy,
+  FaMedal,
+  FaHandsHelping,
+} from "react-icons/fa";
 import { assetPath } from "@/utililties/assetPath";
 
 export const homeData: HomePageProps = {
@@ -91,8 +99,6 @@ export const homeData: HomePageProps = {
         ],
       },
       {
-          title: "Volunteer Student Mentor",
-          icon: <FaHandsHelping key="hands-mentor" title="Volunteer Mentor" />,
         title: "Technology Intern",
         subtitle: "M&T Bank",
         children:
@@ -182,7 +188,7 @@ export const homeData: HomePageProps = {
       {
         label: "2020 \u2013 2024",
         title: "BS, Computer Science",
-        subtitle: "University at Buffalo",
+        subtitle: "University at Buffalo, State University of New York",
         items: [
           "Relevant Courses: Systems Programming, Applied Human Computer-Interaction and Interface Design, Distributed Systems, Algorithms and Complexity, Data Models and Query Languages, Intro to Machine Learning",
         ],
