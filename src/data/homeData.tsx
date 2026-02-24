@@ -21,7 +21,7 @@ import {
 } from "react-icons/si";
 import { DiGithubBadge } from "react-icons/di";
 import { TbWebhook } from "react-icons/tb";
-import { FaLinkedin, FaGithub, FaDownload, FaFileAlt } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaDownload, FaFileAlt, FaTrophy, FaMedal, FaHandsHelping } from "react-icons/fa";
 import { assetPath } from "@/utililties/assetPath";
 
 export const homeData: HomePageProps = {
@@ -69,7 +69,7 @@ export const homeData: HomePageProps = {
         title: "Junior Software Engineer",
         subtitle: "Mean Guppy",
         children:
-          "Build reusable React packages with TypeScript and SASS modules for a Fortune 500 company, supporting scalable frontend development. Write unit and component tests using Vitest and React Testing Library across multiple packages. Contribute to the redevelopment of a Fortune 500 company's website; collaborate on building a Payload CMS solution that streamlines content author workflows.",
+          "Build reusable React component libraries using TypeScript and SASS modules, enabling scalable and consistent frontend development across a Fortune 500 platform. Increase code reliability by implementing comprehensive unit and component tests with Vitest and React Testing Library across shared packages. Contribute to the redevelopment of a Fortune 500 company's website; collaborate on building a Payload CMS solution that streamlines content author workflows.",
         skills: [
           "TypeScript",
           "SCSS",
@@ -91,11 +91,12 @@ export const homeData: HomePageProps = {
         ],
       },
       {
-        label: "June 2023 – August 2023",
+          title: "Volunteer Student Mentor",
+          icon: <FaHandsHelping key="hands-mentor" title="Volunteer Mentor" />,
         title: "Technology Intern",
         subtitle: "M&T Bank",
         children:
-          "Developed a web application that connects women of color in the Buffalo area with financial advisors. Leveraged TypeScript, React, HTML, and CSS to build the web app, added Cypress test coverage, and enforced quality gates through a YAML-based CI pipeline. Part of a research experiment comparing AI-generated code to human developers, kept a weekly log to track progress and differences between the two.",
+          "Developed a web app connecting women of color in Buffalo with financial advisors, increasing access to tailored guidance. Built with TypeScript, React, HTML, and CSS; added Cypress tests and YAML CI quality gates for reliable deployments. Contributed to a research study comparing AI-generated and human code, maintaining weekly logs with findings.",
         skills: [
           "TypeScript",
           "CSS",
@@ -183,12 +184,45 @@ export const homeData: HomePageProps = {
         title: "BS, Computer Science",
         subtitle: "University at Buffalo",
         items: [
-          "GPA: 3.4",
-          "Scholarships: Pride of New York Scholarship Recipient, Athletic Scholarship for Cross Country/Track",
-          "Member of the NCAA D1 Cross Country, Indoor, and Outdoor Track teams",
           "Relevant Courses: Systems Programming, Applied Human Computer-Interaction and Interface Design, Distributed Systems, Algorithms and Complexity, Data Models and Query Languages, Intro to Machine Learning",
-          "Dean's List 2020, MAC All-Academic Team 2021-23 Cross Country, 2022-24 Indoor Track, and 2023-24 Outdoor Track",
         ],
+      },
+      {
+        label: "2016 \u2013 2020",
+        title: "High School Diploma",
+        subtitle: "Burnt Hills-Ballston Lake High School",
+      },
+    ],
+  },
+  awardsSection: {
+    awards: [
+      {
+        label: "2021",
+        title: "Dean's List",
+        subtitle: "University at Buffalo",
+        children:
+          "Recognized for academic excellence across the 2020-2021 academic year.",
+      },
+      {
+        label: "2021 \u2013 2024",
+        title: "8x MAC All-Academic Team",
+        subtitle: "Cross Country / Indoor & Outdoor Track",
+        children:
+          "Selected for consistent academic performance while competing at a high level on the NCAA Division I Cross Country and Track teams.",
+      },
+      {
+        label: "2020 - 2022",
+        title: "Pride of New York Scholarship",
+        subtitle: "University Scholarship",
+        children:
+          "Merit-based scholarship awarded for high school academic achievement.",
+      },
+      {
+        label: "2022 - 2024",
+        title: "Athletic Scholarship",
+        subtitle: "University Scholarship",
+        children:
+          "Merit-based scholarship awarded for athletic and academic achievement.",
       },
     ],
   },

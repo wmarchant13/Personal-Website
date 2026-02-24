@@ -159,6 +159,14 @@
     font-weight: 700;
     border-radius: 16px;
   }
+
+  &:focus-visible {
+    outline: 3px solid #3d3530;
+    outline-offset: 3px;
+    border-radius: 12px;
+    background: rgba(61,53,48,0.06);
+    color: #3d3530;
+  }
 }
 
 .mobileMenu {
@@ -186,5 +194,12 @@
   &.active {
     color: #3d3530;
     font-weight: 700;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #3d3530;
+    outline-offset: 3px;
+    background: rgba(61,53,48,0.06);
+    border-radius: 8px;
   }
 }

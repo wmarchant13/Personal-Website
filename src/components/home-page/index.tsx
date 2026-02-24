@@ -7,6 +7,7 @@ import Hero, { HeroProps } from "../hero";
 import Quote, { QuoteProps } from "../quote";
 import Education, { EducationProps } from "../education";
 import Skills, { SkillsProps } from "../skills";
+import Awards from "../awards";
 import { useIsMobile } from "../../utililties/useIsMobile";
 import { assetPath } from "../../utililties/assetPath";
 
@@ -17,6 +18,15 @@ export interface HomePageProps {
   educationSection?: { entries?: Array<EducationProps> };
   skillsSection?: SkillsProps;
   projectSection?: { projects?: Array<ProjectProps> };
+  awardsSection?: {
+    awards?: Array<{
+      label?: string;
+      title?: string;
+      subtitle?: string;
+      children?: string;
+      icon?: React.ReactNode;
+    }>;
+  };
 }
 
 const HomePage = ({
@@ -26,6 +36,7 @@ const HomePage = ({
   educationSection,
   skillsSection,
   projectSection,
+  awardsSection,
   ...rest
 }: HomePageProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -175,12 +186,11 @@ const HomePage = ({
                 <hr className={styles.newspaperRule} />
                 <div className={styles.aboutContentWrapper}>
                   <p>
-                    Frontend-focused Software Engineer based out of Buffalo, NY
-                    with full-stack experience, collaborating with clients and
-                    content authors to build scalable, user-friendly
-                    applications. Skilled at translating feedback into
-                    functional features and continuously expanding technical
-                    expertise.
+                    Frontend-focused Software Engineer with full-stack
+                    experience, collaborating with clients and content authors
+                    to build scalable, user-friendly applications. Skilled at
+                    translating feedback into functional features and
+                    continuously expanding technical expertise.
                   </p>
                 </div>
               </div>
@@ -252,7 +262,7 @@ const HomePage = ({
                 )}
             </div>
           </section>
-
+          {awardsSection && <Awards awards={awardsSection.awards} />}
           <div style={{ paddingBottom: "var(--space-3xl)" }} />
         </div>
       </div>

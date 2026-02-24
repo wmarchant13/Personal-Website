@@ -404,6 +404,9 @@ button:focus-visible,
   }
 }
 
+/* Awards-specific styling: make awards look like compact cards */
+/* Awards styles moved to a dedicated module: src/components/awards/styles.module.scss */
+
 /* removed unused .experienceCard:hover */
 
 .cardHeader {
@@ -650,4 +653,15 @@ button:focus-visible,
   padding: var(--space-xl) var(--space-lg);
   margin-top: var(--space-lg);
   color: #23242a;
+}
+
+/* Ensure awards section has extra bottom padding so it can scroll fully into view */
+section#awards {
+  padding-bottom: calc(var(--space-3xl) + 48px);
+}
+
+@media (max-width: 768px) {
+  section#awards {
+    padding-bottom: calc(var(--space-3xl) + 120px);
+  }
 }

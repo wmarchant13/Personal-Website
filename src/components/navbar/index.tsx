@@ -53,6 +53,7 @@ const Navbar = () => {
       "education",
       "skills",
       "projects",
+      "awards",
     ];
 
     const scrollContainer = document.querySelector(
