@@ -1,15 +1,11 @@
 import { HomePageProps } from "@/components/home-page";
 import {
-  SiPostgresql,
   SiTypescript,
   SiReact,
-  SiJavascript,
   SiHtml5,
   SiCss3,
   SiPython,
   SiFlask,
-  SiMongodb,
-  SiDocker,
   SiSass,
   SiVitest,
   SiStorybook,
@@ -18,18 +14,13 @@ import {
   SiNextdotjs,
   SiGithubcopilot,
   SiBun,
+  SiSqlite,
+  SiDotnet,
+  SiSharp,
 } from "react-icons/si";
 import { DiGithubBadge } from "react-icons/di";
-import { TbWebhook } from "react-icons/tb";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaDownload,
-  FaFileAlt,
-  FaTrophy,
-  FaMedal,
-  FaHandsHelping,
-} from "react-icons/fa";
+import { TbApi, TbBrandCSharp, TbWebhook } from "react-icons/tb";
+import { FaLinkedin, FaGithub, FaDownload, FaFileAlt } from "react-icons/fa";
 import { assetPath } from "@/utililties/assetPath";
 
 export const homeData: HomePageProps = {
@@ -77,7 +68,7 @@ export const homeData: HomePageProps = {
         title: "Junior Software Engineer",
         subtitle: "Mean Guppy",
         children:
-          "Build reusable React component libraries using TypeScript and SASS modules, enabling scalable and consistent frontend development across a Fortune 500 platform. Increase code reliability by implementing comprehensive unit and component tests with Vitest and React Testing Library across shared packages. Contribute to the redevelopment of a Fortune 500 company's website; collaborate on building a Payload CMS solution that streamlines content author workflows.",
+          "Build reusable TypeScript and SASS-based design system components used across enterprise-scale applications, standardizing UI patterns and improving development efficiency.Improve application stability by implementing comprehensive unit and component testing with Vitest and React Testing Library, reducing regressions in production workflows.Built a Payload CMS + React-based content platform with custom component architecture to support enterprise-scale website re-authoring and migration for a Fortune 500 company, powering hundreds of pages.Implement frontend data layers and API integrations to manage asynchronous requests and structured response handling, enabling reliable dynamic UI rendering.",
         skills: [
           "TypeScript",
           "SCSS",
@@ -102,7 +93,7 @@ export const homeData: HomePageProps = {
         title: "Technology Intern",
         subtitle: "M&T Bank",
         children:
-          "Developed a web app connecting women of color in Buffalo with financial advisors, increasing access to tailored guidance. Built with TypeScript, React, HTML, and CSS; added Cypress tests and YAML CI quality gates for reliable deployments. Contributed to a research study comparing AI-generated and human code, maintaining weekly logs with findings.",
+          "Developed a TypeScript and React web application connecting women of color in Buffalo with financial advisors, improving access to financial guidance and support resources. Implemented Cypress end-to-end tests and YAML-based CI/CD pipelines to ensure reliable, production-ready deployments. Collaborated in a Scrum-based Agile team through sprint planning, stand-ups, and retrospectives. Contributed to a research study comparing AI-generated and human-written code, maintaining weekly logs and documenting findings.",
         skills: [
           "TypeScript",
           "CSS",
@@ -132,12 +123,17 @@ export const homeData: HomePageProps = {
   projectSection: {
     projects: [
       {
-        title: "Database Project",
-        subtitle: "University Project",
+        title: "Real Weather App",
+        subtitle: "Personal Project",
         children:
-          "Designed and implemented a SQL database using PostgreSQL with publicly available datasets. Developed a database schema to solve a defined problem and wrote queries to manipulate and analyze the data. Delivered and presented formal findings to demonstrate project outcomes.",
-        skills: ["PostgreSQL", "SQL"],
-        skillIcons: [<SiPostgresql key="postgres-db" title="PostgreSql" />],
+          "Developed a weather application using .NET MAUI (.NET 8) and C#, integrating real-time data from the OpenWeather API, with user-provided API key input for secure local configuration. Architected and built an ASP .NET backend to manage API requests and streamline data processing, improving performance and scalability. Implemented asynchronous data fetching and error handling to ensure responsive performance and reliable weather updates across devices in a locally hosted environment.",
+        skills: [".NET", "C#", "API"],
+        skillIcons: [
+          <SiDotnet key=".NET" title=".Net" />,
+          <TbBrandCSharp key="C#" title="C#" />,
+          ,
+          <TbApi key="API" title="API" />,
+        ],
       },
       {
         title: "Personal Website",
@@ -156,29 +152,18 @@ export const homeData: HomePageProps = {
         ],
       },
       {
-        title: "Group Web App Project",
-        subtitle: "University Project",
+        title: "CRUD Notes",
+        subtitle: "Personal Project",
         children:
-          "Developed a full-stack web application with secure login, live chat, media sharing, and full user customization. Managed team workflow via GitHub and leveraged Python Flask, HTML, CSS, WebSockets, MongoDB Atlas, and Docker.",
-        skills: [
-          "Python",
-          "Flask",
-          "MongoDB",
-          "GitHub",
-          "HTML",
-          "CSS",
-          "WebSockets",
-          "Docker",
-        ],
+          "Architected and managed a SQLite database to support full CRUD functionality in a Flask-based web application. Wrote and executed SQL queries to handle data insertion, updates, deletion, and retrieval. Established database connections within Flask routes to ensure reliable transaction handling. Maintained data integrity through structured schema design and controlled query execution.",
+        skills: ["Python", "Flask", "GitHub", "HTML", "CSS", "SQLite"],
         skillIcons: [
           <SiPython key="python-group" title="Python" />,
           <SiFlask key="flask-group" title="Flask" />,
-          <SiMongodb key="mongodb-group" title="MongoDB" />,
           <DiGithubBadge key="github-group" title="GitHub" />,
           <SiHtml5 key="html-group" title="HTML5" />,
           <SiCss3 key="css-group" title="CSS3" />,
-          <TbWebhook key="websocket-group" title="WebSockets" />,
-          <SiDocker key="docker-group" title="Docker" />,
+          <SiSqlite key="sqlite-group" title="sqlit" />,
         ],
       },
     ],
@@ -210,6 +195,13 @@ export const homeData: HomePageProps = {
           "Recognized for academic excellence across the 2020-2021 academic year.",
       },
       {
+        label: "2024",
+        title: "Cum Laude",
+        subtitle: "University at Buffalo",
+        children:
+          "Recognized for academic excellence across undegraduate academic career.",
+      },
+      {
         label: "2021 \u2013 2024",
         title: "8x MAC All-Academic Team",
         subtitle: "Cross Country / Indoor & Outdoor Track",
@@ -238,33 +230,30 @@ export const homeData: HomePageProps = {
         title: "Programming Languages",
         skills: [
           "Java",
-          "JavaScript",
           "Python",
+          "Go",
           "Scala",
+          "JavaScript",
           "TypeScript",
           "SQL",
-          "Go",
         ],
       },
       {
         title: "Tools and Platforms",
         skills: [
-          "Zsh Shell Script",
-          "Docker",
-          "GitHub",
-          "GitLab",
           "React",
+          "HTML",
+          "CSS/SCSS",
+          "Next.js",
+          "Storybook",
           "Cypress",
           "Vitest",
-          "CSS",
-          "SCSS",
+          "GitHub",
+          "GitLab",
           "Postman",
-          "HTML",
           "Jira",
-          "Figma",
-          "Asana",
           "CMS",
-          "Storybook",
+          "Figma",
           "YAML",
           "Cursor",
           "GitHub Copilot",
