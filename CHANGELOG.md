@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/wmarchant13/personal-website/compare/v1.3.3...v1.4.0) (2026-04-25)
+
+
+### Features
+
+* **frontend:** added in dark mode ([e53f35f](https://github.com/wmarchant13/personal-website/commit/e53f35f26c6f38412e97546fb66df0c0915a453f))
+
 ## [1.3.3](https://github.com/wmarchant13/personal-website/compare/v1.3.2...v1.3.3) (2026-04-09)
 
 
