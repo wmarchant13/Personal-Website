@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/wmarchant13/personal-website/compare/v1.3.2...v1.3.3) (2026-04-09)
+
+
+### Bug Fixes
+
+* **main:** updating resume information ([1a3010d](https://github.com/wmarchant13/personal-website/commit/1a3010d434982aa177638a40d4279a56f250ce86))
+
 ## [1.3.2](https://github.com/wmarchant13/personal-website/compare/v1.3.1...v1.3.2) (2026-02-19)
 
 
