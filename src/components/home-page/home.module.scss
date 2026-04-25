@@ -23,15 +23,15 @@
 }
 
 .leftSideContainer {
-  background: #483d36;
+  background: var(--book-cover);
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: 4px solid #3d3530;
-  border-top: 4px solid #3d3530;
+  border-right: 2px solid var(--book-cover-border);
+  border-top: 2px solid var(--book-cover-border);
   width: 40%;
   height: 100vh;
   padding-bottom: var(--space-3xl);
@@ -76,7 +76,7 @@
   min-height: 0;
   max-height: 100vh;
   overflow-y: auto;
-  background: #f5f1e8;
+  background: var(--bg-elevated);
   background-attachment: local;
   position: relative;
   scrollbar-width: none;
@@ -101,14 +101,14 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: rgba(224, 224, 224, 0.5);
+  background: color-mix(in srgb, var(--text) 15%, transparent);
   backdrop-filter: blur(10px);
   z-index: 99;
 }
 
 .progressBar {
   height: 100%;
-  background: #3d3530;
+  background: var(--book-cover-border);
   transition: width 0.1s ease-out;
 }
 
@@ -123,7 +123,7 @@
 
 .newspaperRule {
   border: none;
-  border-top: 1px solid #3d3530;
+  border-top: 1px solid var(--border);
   margin: 0;
   width: 100%;
   padding-bottom: 10%;
@@ -131,7 +131,7 @@
 
 .newspaperRuleThick {
   border: none;
-  border-top: 3px double #3d3530;
+  border-top: 3px double var(--border);
   margin: 0;
   width: 100%;
 }
@@ -141,7 +141,7 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-align: center;
-  color: #3d3530;
+  color: var(--text-heading);
   font-family:
     Instrument Serif,
     Georgia,
@@ -167,7 +167,7 @@
 
   p {
     line-height: 1.8;
-    color: #3d3530;
+    color: var(--text);
     font-family:
       Instrument Serif,
       Georgia,
@@ -190,14 +190,14 @@
       line-height: 0.8;
       padding-right: 8px;
       padding-top: 4px;
-      color: #3d3530;
+      color: var(--text-heading);
       font-weight: 700;
     }
   }
 }
 
 .quoteContainer {
-  background: rgba(61, 53, 48, 0.03);
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
   border-radius: 8px;
   max-width: 800px;
   margin: 0 auto;
@@ -205,7 +205,7 @@
 
 .quoteContent {
   font-style: italic;
-  color: #3d3530;
+  color: var(--text);
   margin-bottom: var(--space-md);
   font-family:
     Instrument Serif,
@@ -215,7 +215,7 @@
 }
 
 .quoteAttribution {
-  color: #3d3530;
+  color: var(--text-heading);
   font-family: Barlow, sans-serif;
   font-weight: 600;
 }
@@ -228,7 +228,7 @@
   flex-wrap: wrap;
 
   svg {
-    color: #3d3530;
+    color: var(--text-heading);
     width: 28px;
     height: 28px;
     transition:
@@ -244,24 +244,24 @@
 }
 
 *:focus-visible {
-  outline: 3px solid #3d3530;
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
 a:focus-visible {
-  outline: 3px solid #f5f1e8;
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
 button:focus-visible,
 [role="button"]:focus-visible {
-  outline: 3px solid #3d3530;
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
 [style*="background: #685f57"] a:focus-visible,
 [style*="background: #3d3530"] a:focus-visible {
-  outline: 3px solid #f5f1e8;
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 /* Minimal page styles retained (animations + experience grid) */

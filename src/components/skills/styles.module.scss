@@ -16,14 +16,14 @@
   padding: 0 0 var(--space-md) 0;
   border-radius: 0;
   border: none;
-  border-bottom: 1px solid #3d3530;
+  border-bottom: 1px solid var(--border);
   transition: none;
 }
 
 .skillTitle {
   font-size: calc(var(--fs-body) + 1px);
   font-weight: 700;
-  color: #3d3530;
+  color: var(--text-heading);
   margin-bottom: var(--space-sm);
   font-family: "Instrument Serif", Georgia, serif;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
 
 .skillTag {
   font-size: var(--fs-caption);
-  color: #3d3530;
+  color: var(--text);
   background: transparent;
   padding: 0;
   border-radius: 0;
@@ -52,7 +52,7 @@
 .skillTag::after {
   content: "\2022";
   margin: 0 var(--space-xs);
-  color: rgba(139, 115, 85, 0.4);
+  color: var(--text-subtle);
 }
 
 .skillTag:last-child::after {

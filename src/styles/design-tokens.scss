@@ -36,6 +36,15 @@
   --accent-hover: #73604a; // Darker on interaction
   --accent-soft: #d4c4b3; // Tinted backgrounds
 
+  // Hero left-panel "book cover" colors
+  --book-cover: #483d36;
+  --book-cover-border: #3d3530;
+  --book-cover-tint-1: rgba(60, 48, 38, 0.6);
+  --book-cover-tint-2: rgba(30, 24, 18, 0.5);
+  --book-cover-tint-3: rgba(55, 45, 35, 0.2);
+  --book-cover-tint-4: rgba(25, 20, 15, 0.5);
+  --book-cover-tint-5: rgba(65, 52, 42, 0.1);
+
   // ============================================
   // SPACING SYSTEM
   // Chunky, generous spacing for blocks
@@ -122,6 +131,66 @@
   --transition-fast: 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
   --transition-base: 220ms cubic-bezier(0.2, 0, 0.38, 0.9);
   --transition-slow: 350ms cubic-bezier(0.2, 0, 0.38, 0.9);
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #10141a;
+  --bg-elevated: #151b22;
+  --surface: #1d242d;
+  --surface-hover: #26303b;
+  --border: #313b47;
+  --border-subtle: #242d37;
+  --text: #e4ebf3;
+  --text-heading: #f1f5fb;
+  --text-muted: #b5c0cd;
+  --text-subtle: #8f9bad;
+  --accent: #8aa6dd;
+  --accent-hover: #7994c8;
+  --accent-soft: #2a3444;
+  --book-cover: #0d1117;
+  --book-cover-border: #070b10;
+  --book-cover-tint-1: rgba(27, 45, 73, 0.58);
+  --book-cover-tint-2: rgba(12, 20, 36, 0.62);
+  --book-cover-tint-3: rgba(34, 54, 89, 0.24);
+  --book-cover-tint-4: rgba(8, 14, 26, 0.55);
+  --book-cover-tint-5: rgba(24, 40, 66, 0.18);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.24);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --shadow-inset: inset 0 1px 3px rgba(255, 255, 255, 0.05);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10141a;
+    --bg-elevated: #151b22;
+    --surface: #1d242d;
+    --surface-hover: #26303b;
+    --border: #313b47;
+    --border-subtle: #242d37;
+    --text: #e4ebf3;
+    --text-heading: #f1f5fb;
+    --text-muted: #b5c0cd;
+    --text-subtle: #8f9bad;
+    --accent: #8aa6dd;
+    --accent-hover: #7994c8;
+    --accent-soft: #2a3444;
+    --book-cover: #0d1117;
+    --book-cover-border: #070b10;
+    --book-cover-tint-1: rgba(27, 45, 73, 0.58);
+    --book-cover-tint-2: rgba(12, 20, 36, 0.62);
+    --book-cover-tint-3: rgba(34, 54, 89, 0.24);
+    --book-cover-tint-4: rgba(8, 14, 26, 0.55);
+    --book-cover-tint-5: rgba(24, 40, 66, 0.18);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.24);
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35);
+    --shadow-inset: inset 0 1px 3px rgba(255, 255, 255, 0.05);
+    color-scheme: dark;
+  }
 }
 
 // ============================================

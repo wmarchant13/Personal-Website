@@ -18,7 +18,7 @@
 }
 
 .quoteContainer {
-  background: rgba(61, 53, 48, 0.03);
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
   border-radius: 8px;
   max-width: 800px;
   margin: 0 auto;
@@ -31,7 +31,7 @@
 
 .quoteContent {
   font-style: italic;
-  color: #3d3530;
+  color: var(--text);
   margin-bottom: var(--space-md);
   font-family:
     Instrument Serif,
@@ -46,7 +46,7 @@
 }
 
 .quoteAttribution {
-  color: #3d3530;
+  color: var(--text-heading);
   font-family: Barlow, sans-serif;
   font-weight: 600;
   font-size: 1.1rem;

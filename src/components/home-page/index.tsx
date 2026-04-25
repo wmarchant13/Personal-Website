@@ -37,7 +37,6 @@ const HomePage = ({
   skillsSection,
   projectSection,
   awardsSection,
-  ...rest
 }: HomePageProps) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -143,7 +142,7 @@ const HomePage = ({
           }}
           className={styles.leftSideContainer}
           style={{
-            backgroundImage: `radial-gradient(ellipse at 15% 30%, rgba(60, 48, 38, 0.6) 0%, transparent 45%), radial-gradient(ellipse at 85% 60%, rgba(30, 24, 18, 0.5) 0%, transparent 45%), radial-gradient(ellipse at 50% 0%, rgba(55, 45, 35, 0.2) 0%, transparent 35%), radial-gradient(ellipse at 50% 100%, rgba(25, 20, 15, 0.5) 0%, transparent 35%), radial-gradient(ellipse at 70% 20%, rgba(65, 52, 42, 0.1) 0%, transparent 30%), url(${assetPath("/images/leather.svg")}), url(${assetPath("/images/grain.svg")})`,
+            backgroundImage: `radial-gradient(ellipse at 15% 30%, var(--book-cover-tint-1) 0%, transparent 45%), radial-gradient(ellipse at 85% 60%, var(--book-cover-tint-2) 0%, transparent 45%), radial-gradient(ellipse at 50% 0%, var(--book-cover-tint-3) 0%, transparent 35%), radial-gradient(ellipse at 50% 100%, var(--book-cover-tint-4) 0%, transparent 35%), radial-gradient(ellipse at 70% 20%, var(--book-cover-tint-5) 0%, transparent 30%), url(${assetPath("/images/leather.svg")}), url(${assetPath("/images/grain.svg")})`,
           }}
         >
           {/* Hero Section */}

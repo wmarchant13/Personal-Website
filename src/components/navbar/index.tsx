@@ -10,12 +10,39 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isMobile = useIsMobile();
   const [nameTagWave, setNameTagWave] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    if (!isMobile) {
-      setIsMobileMenuOpen(false);
-    }
-  }, [isMobile]);
+    if (typeof window === "undefined") return;
+
+    const savedTheme = window.localStorage.getItem("theme-preference");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const applyTheme = (nextTheme: "light" | "dark") => {
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      setTheme(nextTheme);
+    };
+
+    if (savedTheme === "light" || savedTheme === "dark") applyTheme(savedTheme);
+    else applyTheme(mediaQuery.matches ? "dark" : "light");
+
+    const onSystemThemeChange = (event: MediaQueryListEvent) => {
+      const localTheme = window.localStorage.getItem("theme-preference");
+      if (!localTheme) {
+        applyTheme(event.matches ? "dark" : "light");
+      }
+    };
+
+    mediaQuery.addEventListener("change", onSystemThemeChange);
+    return () => mediaQuery.removeEventListener("change", onSystemThemeChange);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    window.localStorage.setItem("theme-preference", nextTheme);
+    setTheme(nextTheme);
+  };
 
   // Smooth scroll handler
   const handleSmoothScroll = (
@@ -126,6 +153,26 @@ const Navbar = () => {
 
         {/* Desktop menu */}
         <div className={styles.desktopMenu}>
+          <button
+            type="button"
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            <span
+              aria-hidden="true"
+              className={`${styles.themeSun} ${theme === "light" ? styles.activeThemeIcon : ""}`}
+            >
+              ☀
+            </span>
+            <span
+              aria-hidden="true"
+              className={`${styles.themeMoon} ${theme === "dark" ? styles.activeThemeIcon : ""}`}
+            >
+              ☾
+            </span>
+          </button>
           {navLinks.map((tab) => (
             <a
               key={tab.id}
@@ -153,6 +200,16 @@ const Navbar = () => {
       {/* Mobile menu dropdown */}
       {isMobile && isMobileMenuOpen && (
         <div className={styles.mobileMenu}>
+          <button
+            type="button"
+            className={styles.mobileThemeToggle}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark"
+              ? "Theme: Dark (switch to light)"
+              : "Theme: Light (switch to dark)"}
+          </button>
           {navLinks.map((tab) => (
             <a
               key={tab.id}

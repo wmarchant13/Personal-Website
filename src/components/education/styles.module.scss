@@ -5,8 +5,8 @@
   border-radius: 0;
   box-shadow: none;
   padding: 0 0 var(--space-lg) 0;
-  color: #3d3530;
-  border-bottom: 1px solid #3d3530;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
   margin-bottom: var(--space-lg);
 
   @include mobile {
@@ -23,7 +23,7 @@
   font-size: var(--fs-caption);
   text-transform: uppercase;
   letter-spacing: var(--ls-wider);
-  color: rgba(61, 53, 48, 0.6);
+  color: var(--text-muted);
   font-weight: 600;
   margin-bottom: var(--space-xs);
   font-family: "Barlow", sans-serif;
@@ -32,7 +32,7 @@
 .cardTitle {
   font-size: calc(var(--fs-h3) + 2px);
   line-height: 1.3;
-  color: #3d3530;
+  color: var(--text-heading);
   margin-bottom: var(--space-xs);
   font-weight: 700;
   font-family: "Instrument Serif", Georgia, serif;
@@ -44,7 +44,7 @@
 
 .cardSubtitle {
   font-size: var(--fs-body);
-  color: #3d3530;
+  color: var(--text);
   opacity: 0.7;
   margin-bottom: var(--space-xs);
 }
